@@ -51,6 +51,10 @@ coverage.xml
 # Django stuff:
 *.log
 
+# Tensorflow Stuff
+*.h5
+*.json
+
 # Sphinx documentation
 docs/_build/
 

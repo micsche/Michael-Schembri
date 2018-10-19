@@ -1,0 +1,575 @@
+inceptionv3.gap.fc1k.gap.sm.
+MODEL NAME: inceptionv3.gap.fc1k.gap.sm..h5
+JSON FILE: ./inceptionv3.gap.fc1k.gap.sm.arch.json
+WEIGHTS FILE: ./inceptionv3.gap.fc1k.gap.sm.weights.h5
+EPOCHS: 60
+layers to train:-65
+DATE:2018-10-11 14:28
+Image Size:224
+BATCH SIZE:150
+Number of classes:2
+input_1False
+conv2d_1False
+batch_normalization_1False
+activation_1False
+conv2d_2False
+batch_normalization_2False
+activation_2False
+conv2d_3False
+batch_normalization_3False
+activation_3False
+max_pooling2d_1False
+conv2d_4False
+batch_normalization_4False
+activation_4False
+conv2d_5False
+batch_normalization_5False
+activation_5False
+max_pooling2d_2False
+conv2d_9False
+batch_normalization_9False
+activation_9False
+conv2d_7False
+conv2d_10False
+batch_normalization_7False
+batch_normalization_10False
+activation_7False
+activation_10False
+average_pooling2d_1False
+conv2d_6False
+conv2d_8False
+conv2d_11False
+conv2d_12False
+batch_normalization_6False
+batch_normalization_8False
+batch_normalization_11False
+batch_normalization_12False
+activation_6False
+activation_8False
+activation_11False
+activation_12False
+mixed0False
+conv2d_16False
+batch_normalization_16False
+activation_16False
+conv2d_14False
+conv2d_17False
+batch_normalization_14False
+batch_normalization_17False
+activation_14False
+activation_17False
+average_pooling2d_2False
+conv2d_13False
+conv2d_15False
+conv2d_18False
+conv2d_19False
+batch_normalization_13False
+batch_normalization_15False
+batch_normalization_18False
+batch_normalization_19False
+activation_13False
+activation_15False
+activation_18False
+activation_19False
+mixed1False
+conv2d_23False
+batch_normalization_23False
+activation_23False
+conv2d_21False
+conv2d_24False
+batch_normalization_21False
+batch_normalization_24False
+activation_21False
+activation_24False
+average_pooling2d_3False
+conv2d_20False
+conv2d_22False
+conv2d_25False
+conv2d_26False
+batch_normalization_20False
+batch_normalization_22False
+batch_normalization_25False
+batch_normalization_26False
+activation_20False
+activation_22False
+activation_25False
+activation_26False
+mixed2False
+conv2d_28False
+batch_normalization_28False
+activation_28False
+conv2d_29False
+batch_normalization_29False
+activation_29False
+conv2d_27False
+conv2d_30False
+batch_normalization_27False
+batch_normalization_30False
+activation_27False
+activation_30False
+max_pooling2d_3False
+mixed3False
+conv2d_35False
+batch_normalization_35False
+activation_35False
+conv2d_36False
+batch_normalization_36False
+activation_36False
+conv2d_32False
+conv2d_37False
+batch_normalization_32False
+batch_normalization_37False
+activation_32False
+activation_37False
+conv2d_33False
+conv2d_38False
+batch_normalization_33False
+batch_normalization_38False
+activation_33False
+activation_38False
+average_pooling2d_4False
+conv2d_31False
+conv2d_34False
+conv2d_39False
+conv2d_40False
+batch_normalization_31False
+batch_normalization_34False
+batch_normalization_39False
+batch_normalization_40False
+activation_31False
+activation_34False
+activation_39False
+activation_40False
+mixed4False
+conv2d_45False
+batch_normalization_45False
+activation_45False
+conv2d_46False
+batch_normalization_46False
+activation_46False
+conv2d_42False
+conv2d_47False
+batch_normalization_42False
+batch_normalization_47False
+activation_42False
+activation_47False
+conv2d_43False
+conv2d_48False
+batch_normalization_43False
+batch_normalization_48False
+activation_43False
+activation_48False
+average_pooling2d_5False
+conv2d_41False
+conv2d_44False
+conv2d_49False
+conv2d_50False
+batch_normalization_41False
+batch_normalization_44False
+batch_normalization_49False
+batch_normalization_50False
+activation_41False
+activation_44False
+activation_49False
+activation_50False
+mixed5False
+conv2d_55False
+batch_normalization_55False
+activation_55False
+conv2d_56False
+batch_normalization_56False
+activation_56False
+conv2d_52False
+conv2d_57False
+batch_normalization_52False
+batch_normalization_57False
+activation_52False
+activation_57False
+conv2d_53False
+conv2d_58False
+batch_normalization_53False
+batch_normalization_58False
+activation_53False
+activation_58False
+average_pooling2d_6False
+conv2d_51False
+conv2d_54False
+conv2d_59False
+conv2d_60False
+batch_normalization_51False
+batch_normalization_54False
+batch_normalization_59False
+batch_normalization_60False
+activation_51False
+activation_54False
+activation_59False
+activation_60False
+mixed6False
+conv2d_65False
+batch_normalization_65False
+activation_65False
+conv2d_66False
+batch_normalization_66False
+activation_66False
+conv2d_62False
+conv2d_67False
+batch_normalization_62False
+batch_normalization_67False
+activation_62False
+activation_67False
+conv2d_63False
+conv2d_68False
+batch_normalization_63False
+batch_normalization_68False
+activation_63False
+activation_68False
+average_pooling2d_7False
+conv2d_61False
+conv2d_64False
+conv2d_69False
+conv2d_70False
+batch_normalization_61False
+batch_normalization_64False
+batch_normalization_69False
+batch_normalization_70False
+activation_61False
+activation_64False
+activation_69False
+activation_70False
+mixed7False
+conv2d_73False
+batch_normalization_73False
+activation_73False
+conv2d_74False
+batch_normalization_74False
+activation_74False
+conv2d_71False
+conv2d_75False
+batch_normalization_71False
+batch_normalization_75False
+activation_71False
+activation_75False
+conv2d_72False
+conv2d_76False
+batch_normalization_72False
+batch_normalization_76False
+activation_72False
+activation_76False
+max_pooling2d_4False
+mixed8False
+conv2d_81False
+batch_normalization_81False
+activation_81False
+conv2d_78False
+conv2d_82False
+batch_normalization_78False
+batch_normalization_82False
+activation_78False
+activation_82False
+conv2d_79False
+conv2d_80False
+conv2d_83False
+conv2d_84False
+average_pooling2d_8False
+conv2d_77False
+batch_normalization_79False
+batch_normalization_80False
+batch_normalization_83False
+batch_normalization_84False
+conv2d_85False
+batch_normalization_77False
+activation_79False
+activation_80False
+activation_83False
+activation_84False
+batch_normalization_85False
+activation_77False
+mixed9_0False
+concatenate_1False
+activation_85False
+mixed9False
+conv2d_90False
+batch_normalization_90False
+activation_90False
+conv2d_87False
+conv2d_91False
+batch_normalization_87False
+batch_normalization_91False
+activation_87False
+activation_91False
+conv2d_88False
+conv2d_89False
+conv2d_92False
+conv2d_93False
+average_pooling2d_9False
+conv2d_86False
+batch_normalization_88False
+batch_normalization_89False
+batch_normalization_92False
+batch_normalization_93False
+conv2d_94False
+batch_normalization_86False
+activation_88False
+activation_89False
+activation_92False
+activation_93False
+batch_normalization_94False
+activation_86False
+mixed9_1False
+concatenate_2False
+activation_94True
+mixed10True
+global_average_pooling2d_1True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.860910943865695
+Accuracy:0.8588715129608527
+Accuracy:0.8511216875993824
+Accuracy:0.8617267181968948
+Accuracy:0.859007477314597
+Accuracy:0.8580557484759676
+Accuracy:0.8583276695252113
+Accuracy:0.8660775028589548
+Accuracy:0.8602311381225599
+Accuracy:0.8656696165037512
+Accuracy:0.8580557410608417
+Accuracy:0.8644459530012207
+Accuracy:0.8583276658784281
+Accuracy:0.8585995990836158
+Accuracy:0.8599592112587229
+Accuracy:0.8591434416683412
+Accuracy:0.8625424903400247
+Accuracy:0.8609109487280726
+Accuracy:0.8671651964362668
+Accuracy:0.8663494292770738
+Accuracy:0.8556084297369484
+Accuracy:0.8591434439779706
+Accuracy:0.8621346037214423
+Accuracy:0.859823254198545
+Accuracy:0.8636301835323985
+Accuracy:0.8585995967739865
+Accuracy:0.856832091051409
+Accuracy:0.8617267158872655
+Accuracy:0.863902113090803
+Accuracy:0.8621346011686941
+Accuracy:0.86240652610784
+Accuracy:0.8617267171028599
+Accuracy:0.863222298007851
+Accuracy:0.8611828722085052
+Accuracy:0.8636301847479928
+Accuracy:0.8662134585819788
+Accuracy:0.8619986426194131
+Accuracy:0.8663494193091998
+Accuracy:0.8663494255087313
+Accuracy:0.8634942264722205
+Accuracy:0.8656696129785274
+Accuracy:0.8523453429878204
+Accuracy:0.8690686592190222
+Accuracy:0.8663494244146963
+Accuracy:0.8619986428929218
+Accuracy:0.8590074771930376
+Accuracy:0.8643099973997561
+Accuracy:0.8617267183184543
+Accuracy:0.8606390177109547
+Accuracy:0.8696125076386007
+Accuracy:0.8581917090613691
+Accuracy:0.8605030571255532
+Accuracy:0.8632222993450048
+Accuracy:0.8626784506823075
+Accuracy:0.8679809657835296
+Accuracy:0.8697484741804148
+Accuracy:0.8655336487463426
+Accuracy:0.8614547935008678
+Accuracy:0.8647178825596252
+Accuracy:0.8622705679536271
+Validation Accuracy:0.6934782781678698
+Validation Accuracy:0.7050724797274756
+Validation Accuracy:0.7152174073068992
+Validation Accuracy:0.6898550885203092
+Validation Accuracy:0.7094203071749728
+Validation Accuracy:0.6913043652539668
+Validation Accuracy:0.7079710309272227
+Validation Accuracy:0.711594219117061
+Validation Accuracy:0.6768116111988607
+Validation Accuracy:0.6463768294324046
+Validation Accuracy:0.7050724800514139
+Validation Accuracy:0.6840579879024754
+Validation Accuracy:0.7115942194409992
+Validation Accuracy:0.6557971193738605
+Validation Accuracy:0.7101449435171874
+Validation Accuracy:0.7050724800514139
+Validation Accuracy:0.7021739285277284
+Validation Accuracy:0.6384058150908222
+Validation Accuracy:0.6920290019201196
+Validation Accuracy:0.6869565387782843
+Validation Accuracy:0.6992753795955492
+Validation Accuracy:0.6847826258643813
+Validation Accuracy:0.6942029151579608
+Validation Accuracy:0.7123188567550286
+Validation Accuracy:0.699275378299796
+Validation Accuracy:0.7123188567550286
+Validation Accuracy:0.7007246535757313
+Validation Accuracy:0.6992753789476727
+Validation Accuracy:0.7123188567550286
+Validation Accuracy:0.6934782768721166
+Validation Accuracy:0.7115942187931227
+Validation Accuracy:0.6949275531198668
+Validation Accuracy:0.7362318994558376
+Validation Accuracy:0.7086956688891286
+Validation Accuracy:0.698550741309705
+Validation Accuracy:0.7130434947169345
+Validation Accuracy:0.6855072631784107
+Validation Accuracy:0.697101466357708
+Validation Accuracy:0.7289855227522228
+Validation Accuracy:0.734782623855964
+Validation Accuracy:0.7369565370938053
+Validation Accuracy:0.7239130586385727
+Validation Accuracy:0.720289871096611
+Validation Accuracy:0.704347843385261
+Validation Accuracy:0.7528985651290935
+Validation Accuracy:0.7420289995877639
+Validation Accuracy:0.7188405951727992
+Validation Accuracy:0.6884058140542196
+Validation Accuracy:0.6739130609709284
+Validation Accuracy:0.7347826232080874
+Validation Accuracy:0.6710145104190578
+Validation Accuracy:0.7036232038036637
+Validation Accuracy:0.7007246535757313
+Validation Accuracy:0.6804347990647607
+Validation Accuracy:0.6789855228170104
+Validation Accuracy:0.6833333505884461
+Validation Accuracy:0.7210145084106404
+Validation Accuracy:0.7079710309272227
+Validation Accuracy:0.6913043642821519
+Validation Accuracy:0.706521756299164
+Loss:0.31698777530162536
+Loss:0.3214373448971256
+Loss:0.32834412770397725
+Loss:0.3169131610646368
+Loss:0.324742972324042
+Loss:0.3191348049285702
+Loss:0.3233778301669496
+Loss:0.3107190294220365
+Loss:0.3175711155667101
+Loss:0.3114138260574911
+Loss:0.32551402027796594
+Loss:0.3145718625984088
+Loss:0.3159827907866641
+Loss:0.3229714983746278
+Loss:0.3125072139955394
+Loss:0.3256040927222762
+Loss:0.3155961494049517
+Loss:0.3206350184739001
+Loss:0.31217146377167193
+Loss:0.3091768898996749
+Loss:0.3138867998755278
+Loss:0.31734635194169675
+Loss:0.3174877767049075
+Loss:0.31976032631888346
+Loss:0.3101846309724428
+Loss:0.31734195410354377
+Loss:0.31816376497516985
+Loss:0.3102814915997086
+Loss:0.3128906087880229
+Loss:0.3137330280972694
+Loss:0.31321826715460444
+Loss:0.3097482178484316
+Loss:0.3114365808903806
+Loss:0.3194910425219221
+Loss:0.3126684705429868
+Loss:0.3149284621755093
+Loss:0.3128802246134918
+Loss:0.3100798219786786
+Loss:0.31201849773495804
+Loss:0.3079799503635015
+Loss:0.30954213845616374
+Loss:0.32542518613939786
+Loss:0.3088738880519718
+Loss:0.31159556147032735
+Loss:0.3136416562635991
+Loss:0.3117300344113182
+Loss:0.3095530560537717
+Loss:0.3122953722249643
+Loss:0.32031114225197943
+Loss:0.30419035032037
+Loss:0.3175240548430131
+Loss:0.3214733571847388
+Loss:0.31321776623348246
+Loss:0.3104600978497337
+Loss:0.30835887832272063
+Loss:0.30411087958120636
+Loss:0.31031193268655677
+Loss:0.31259340287916193
+Loss:0.3120532617286952
+Loss:0.3166699845731299
+Validation Loss:0.7118079921473628
+Validation Loss:0.6820057690467524
+Validation Loss:0.6631067362816437
+Validation Loss:0.717379867868579
+Validation Loss:0.6753525503951571
+Validation Loss:0.7155859254948471
+Validation Loss:0.6808040585854779
+Validation Loss:0.6728972071862739
+Validation Loss:0.7475878039131993
+Validation Loss:0.7972033146930777
+Validation Loss:0.6873411215517832
+Validation Loss:0.7388723168684088
+Validation Loss:0.6760653932781323
+Validation Loss:0.7901089516994746
+Validation Loss:0.676174556431563
+Validation Loss:0.6939764213950738
+Validation Loss:0.6995509244177652
+Validation Loss:0.8257751549067704
+Validation Loss:0.717916886281708
+Validation Loss:0.7337936299002689
+Validation Loss:0.7035519125992837
+Validation Loss:0.7445222694912682
+Validation Loss:0.7191056204230889
+Validation Loss:0.6790140271186829
+Validation Loss:0.7056645028617071
+Validation Loss:0.6819176032491352
+Validation Loss:0.7101824682043947
+Validation Loss:0.7115871166081532
+Validation Loss:0.6731378048982309
+Validation Loss:0.7286334824950799
+Validation Loss:0.6897814338621886
+Validation Loss:0.7255758707937987
+Validation Loss:0.6385979893738809
+Validation Loss:0.7008027827934079
+Validation Loss:0.7196255491479583
+Validation Loss:0.6868059951002183
+Validation Loss:0.7470615029982899
+Validation Loss:0.722914316084074
+Validation Loss:0.657875910077406
+Validation Loss:0.6436576286087865
+Validation Loss:0.6394681132034116
+Validation Loss:0.6711926534771919
+Validation Loss:0.6795286808324896
+Validation Loss:0.707752368858327
+Validation Loss:0.6075981048786122
+Validation Loss:0.6238358645983364
+Validation Loss:0.684359519701937
+Validation Loss:0.7408255204234434
+Validation Loss:0.76748986898557
+Validation Loss:0.6450965129162954
+Validation Loss:0.7791751916317836
+Validation Loss:0.7079698968192806
+Validation Loss:0.7151839023698932
+Validation Loss:0.7612062511236771
+Validation Loss:0.7692368223291376
+Validation Loss:0.7572611453740493
+Validation Loss:0.6742639655004377
+Validation Loss:0.7011994664435801
+Validation Loss:0.7381096276576105
+Validation Loss:0.7056375780831212
+Confusion MatrixTN:775 FP:397 FN:8 TP:200
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.66      0.79      1172
+     Litter       0.34      0.96      0.50       208
+
+avg / total       0.89      0.71      0.75      1380
+
+DATE:2018-10-11 15:43

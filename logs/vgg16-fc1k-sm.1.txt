@@ -1,0 +1,5595 @@
+vgg16-fc1k-sm.
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 18:53
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6910807691667553
+Accuracy:0.7630470857885521
+Accuracy:0.7908638478907393
+Accuracy:0.8094934245921587
+Accuracy:0.8143422221732837
+Accuracy:0.8242950079710916
+Accuracy:0.8291438043733572
+Accuracy:0.8330993969114638
+Accuracy:0.8443281849276065
+Accuracy:0.8495597827871098
+Accuracy:0.8574709702818859
+Accuracy:0.8508357777573616
+Validation Accuracy:0.8173913009788679
+Validation Accuracy:0.8094202837218409
+Validation Accuracy:0.8768115872922151
+Validation Accuracy:0.8086956506190093
+Validation Accuracy:0.8543478198673414
+Validation Accuracy:0.8594202826852384
+Validation Accuracy:0.8137681095496468
+Validation Accuracy:0.8760869477106177
+Validation Accuracy:0.8673912999422654
+Validation Accuracy:0.8746376711389293
+Validation Accuracy:0.8420289780782617
+Validation Accuracy:0.8753623159035392
+Loss:1.8293781490126357
+Loss:1.3266416311537839
+Loss:1.1045739951145288
+Loss:0.9615119683950915
+Loss:0.8680215399834488
+Loss:0.8126182943084371
+Loss:0.7770446457697966
+Loss:0.7337535167586154
+Loss:0.6796580918729344
+Loss:0.6206046933420187
+Loss:0.590615715430801
+Loss:0.5689956482779817
+Validation Loss:0.8258921928379847
+Validation Loss:0.8490611661387526
+Validation Loss:0.5685288212869478
+Validation Loss:0.8221559469466624
+Validation Loss:0.6544949399388355
+Validation Loss:0.6068676740902922
+Validation Loss:0.7318060929360597
+Validation Loss:0.44924235781249794
+Validation Loss:0.49507692326670105
+Validation Loss:0.42975997681850975
+Validation Loss:0.5466328276240308
+Validation Loss:0.4089605492418227
+Confusion MatrixTN:1021 FP:151 FN:21 TP:187
+             precision    recall  f1-score   support
+
+  No Litter       0.98      0.87      0.92      1172
+     Litter       0.55      0.90      0.68       208
+
+avg / total       0.92      0.88      0.89      1380
+
+DATE:2018-10-11 19:09
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 19:09
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 19:09
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 19:12
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 19:12
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 19:12
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6959295656146544
+Accuracy:0.7649610817120577
+Accuracy:0.7869082556492488
+Accuracy:0.8139594210126623
+Accuracy:0.8228914120815779
+Accuracy:0.8212326111363957
+Accuracy:0.8398621926521241
+Accuracy:0.8351409941573251
+Accuracy:0.8374377944433858
+Accuracy:0.847518181951432
+Accuracy:0.8522393739434915
+Accuracy:0.8574709692247154
+Validation Accuracy:0.7123188415299291
+Validation Accuracy:0.7137681193973707
+Validation Accuracy:0.7688405824744183
+Validation Accuracy:0.809420285017594
+Validation Accuracy:0.8297101375849351
+Validation Accuracy:0.8311594128608704
+Validation Accuracy:0.8260869513387266
+Validation Accuracy:0.8362318795660267
+Validation Accuracy:0.8326086868410525
+Validation Accuracy:0.852898543295653
+Validation Accuracy:0.856521733429121
+Validation Accuracy:0.8014492703520734
+Loss:1.7713044526793906
+Loss:1.2991779983020855
+Loss:1.106911624376911
+Loss:0.9317604364356444
+Loss:0.8681910694352792
+Loss:0.8459047553900387
+Loss:0.7146253909583419
+Loss:0.7313202520414352
+Loss:0.670791205629579
+Loss:0.6292775729959894
+Loss:0.5683620289392095
+Loss:0.5523171114787713
+Validation Loss:1.268585571128389
+Validation Loss:1.2455793204514876
+Validation Loss:0.9624311072023018
+Validation Loss:0.8032948831501214
+Validation Loss:0.6687922160262647
+Validation Loss:0.6367477755183759
+Validation Loss:0.6676012646892796
+Validation Loss:0.6315478543224542
+Validation Loss:0.629819437213566
+Validation Loss:0.5500455064618069
+Validation Loss:0.5150765097983505
+Validation Loss:0.6986334421064543
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 12
+layers to train:-5
+DATE:2018-10-11 19:12
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 4096)              102764544 
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 4096)              16781312  
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 4096)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 8194      
+
+=================================================================
+
+Total params: 134,268,738
+
+Trainable params: 119,554,050
+
+Non-trainable params: 14,714,688
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6959295656146544
+Accuracy:0.7649610817120577
+Accuracy:0.7869082556492488
+Accuracy:0.8139594210126623
+Accuracy:0.8228914120815779
+Accuracy:0.8212326111363957
+Accuracy:0.8398621926521241
+Accuracy:0.8351409941573251
+Accuracy:0.8374377944433858
+Accuracy:0.847518181951432
+Accuracy:0.8522393739434915
+Accuracy:0.8574709692247154
+Validation Accuracy:0.7123188415299291
+Validation Accuracy:0.7137681193973707
+Validation Accuracy:0.7688405824744183
+Validation Accuracy:0.809420285017594
+Validation Accuracy:0.8297101375849351
+Validation Accuracy:0.8311594128608704
+Validation Accuracy:0.8260869513387266
+Validation Accuracy:0.8362318795660267
+Validation Accuracy:0.8326086868410525
+Validation Accuracy:0.852898543295653
+Validation Accuracy:0.856521733429121
+Validation Accuracy:0.8014492703520734
+Loss:1.7713044526793906
+Loss:1.2991779983020855
+Loss:1.106911624376911
+Loss:0.9317604364356444
+Loss:0.8681910694352792
+Loss:0.8459047553900387
+Loss:0.7146253909583419
+Loss:0.7313202520414352
+Loss:0.670791205629579
+Loss:0.6292775729959894
+Loss:0.5683620289392095
+Loss:0.5523171114787713
+Validation Loss:1.268585571128389
+Validation Loss:1.2455793204514876
+Validation Loss:0.9624311072023018
+Validation Loss:0.8032948831501214
+Validation Loss:0.6687922160262647
+Validation Loss:0.6367477755183759
+Validation Loss:0.6676012646892796
+Validation Loss:0.6315478543224542
+Validation Loss:0.629819437213566
+Validation Loss:0.5500455064618069
+Validation Loss:0.5150765097983505
+Validation Loss:0.6986334421064543
+Confusion MatrixTN:911 FP:261 FN:13 TP:195
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.78      0.87      1172
+     Litter       0.43      0.94      0.59       208
+
+avg / total       0.90      0.80      0.83      1380
+
+DATE:2018-10-11 19:29
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 60
+layers to train:-8
+DATE:2018-10-11 19:32
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 60
+layers to train:-8
+DATE:2018-10-11 19:32
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 60
+layers to train:-8
+DATE:2018-10-11 19:32
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 60
+layers to train:-8
+DATE:2018-10-11 19:32
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-8
+DATE:2018-10-11 19:49
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-8
+DATE:2018-10-11 19:49
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-8
+DATE:2018-10-11 19:49
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.8217430106836329
+Accuracy:0.8440729862834112
+Accuracy:0.8519841783719356
+Accuracy:0.8607885616918113
+Accuracy:0.8605333668503877
+Accuracy:0.8595125671398645
+Accuracy:0.8757177501654494
+Accuracy:0.8778869454024382
+Accuracy:0.8841393437634413
+Accuracy:0.8838841393770606
+Accuracy:0.8884777325261715
+Accuracy:0.8914125330505649
+Accuracy:0.8909021341954322
+Accuracy:0.897792521546169
+Accuracy:0.8972821226454031
+Accuracy:0.8990685195130049
+Accuracy:0.8991961223716805
+Accuracy:0.9013653199815987
+Accuracy:0.9099145122628226
+Accuracy:0.9114457081589328
+Accuracy:0.9055761155218772
+Accuracy:0.9106801117015643
+Accuracy:0.9100421104669054
+Accuracy:0.9161669047903738
+Accuracy:0.9171877007285475
+Accuracy:0.9170601021517931
+Accuracy:0.9193569013046279
+Accuracy:0.9211432956395837
+Accuracy:0.9191017004091916
+Accuracy:0.9222916954936035
+Validation Accuracy:0.9384057858715886
+Validation Accuracy:0.9202898481617803
+Validation Accuracy:0.8876811538053595
+Validation Accuracy:0.8311594141566235
+Validation Accuracy:0.9478260732215383
+Validation Accuracy:0.8710144861884739
+Validation Accuracy:0.805797102658645
+Validation Accuracy:0.8760869477106177
+Validation Accuracy:0.8666666564734086
+Validation Accuracy:0.9166666580283124
+Validation Accuracy:0.8289855018905972
+Validation Accuracy:0.9036231779533884
+Validation Accuracy:0.8550724594489388
+Validation Accuracy:0.8942028906034387
+Validation Accuracy:0.9057970915151679
+Validation Accuracy:0.8289855018905972
+Validation Accuracy:0.7166666660619818
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.9159420145594556
+Validation Accuracy:0.8920289796331654
+Validation Accuracy:0.8985507177269977
+Validation Accuracy:0.8282608649005061
+Validation Accuracy:0.8659420207790707
+Validation Accuracy:0.8999999904114268
+Validation Accuracy:0.866666660360668
+Validation Accuracy:0.8166666601015173
+Validation Accuracy:0.8623188358286152
+Validation Accuracy:0.8086956467317499
+Validation Accuracy:0.9094202816486359
+Validation Accuracy:0.8601449196753295
+Loss:1.0430376617005244
+Loss:0.7637635866293908
+Loss:0.719896709445911
+Loss:0.6555642470863837
+Loss:0.626182633236429
+Loss:0.5968353108229482
+Loss:0.4940456248552683
+Loss:0.4714775798088649
+Loss:0.42033831544312666
+Loss:0.4195800703087829
+Loss:0.36693397837815667
+Loss:0.3810818005242457
+Loss:0.3767673373374462
+Loss:0.34849231577701406
+Loss:0.34126378831030446
+Loss:0.3228204763938049
+Loss:0.3137740538986389
+Loss:0.31835385576732855
+Loss:0.28400781137672204
+Loss:0.276926478160208
+Loss:0.27831506553057644
+Loss:0.2582069027584716
+Loss:0.26637474498541
+Loss:0.2588262806703686
+Loss:0.24716756748589566
+Loss:0.2593200587832351
+Loss:0.23783226062315405
+Loss:0.23384347839426656
+Loss:0.23625155548112678
+Loss:0.2310760746550405
+Validation Loss:0.26525184534409124
+Validation Loss:0.3087742155539277
+Validation Loss:0.43907110555016476
+Validation Loss:0.5594509577621585
+Validation Loss:0.19504964034295763
+Validation Loss:0.4383087125809296
+Validation Loss:0.6023296989176584
+Validation Loss:0.376414241998092
+Validation Loss:0.3999791880664618
+Validation Loss:0.24710737646597883
+Validation Loss:0.4611741367565549
+Validation Loss:0.30777083045762516
+Validation Loss:0.4090676391902177
+Validation Loss:0.3389238616370637
+Validation Loss:0.28387613513547444
+Validation Loss:0.49642896069132764
+Validation Loss:0.7098736834266911
+Validation Loss:0.48999110803655954
+Validation Loss:0.25781476951163745
+Validation Loss:0.3028026539022508
+Validation Loss:0.28119910071077553
+Validation Loss:0.45687619207993796
+Validation Loss:0.37884915458119434
+Validation Loss:0.3074401380575221
+Validation Loss:0.4132091558497885
+Validation Loss:0.5188340499349262
+Validation Loss:0.40868690869082575
+Validation Loss:0.49245513619288156
+Validation Loss:0.294519675652618
+Validation Loss:0.41751078872577
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-8
+DATE:2018-10-11 19:49
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.8217430106836329
+Accuracy:0.8440729862834112
+Accuracy:0.8519841783719356
+Accuracy:0.8607885616918113
+Accuracy:0.8605333668503877
+Accuracy:0.8595125671398645
+Accuracy:0.8757177501654494
+Accuracy:0.8778869454024382
+Accuracy:0.8841393437634413
+Accuracy:0.8838841393770606
+Accuracy:0.8884777325261715
+Accuracy:0.8914125330505649
+Accuracy:0.8909021341954322
+Accuracy:0.897792521546169
+Accuracy:0.8972821226454031
+Accuracy:0.8990685195130049
+Accuracy:0.8991961223716805
+Accuracy:0.9013653199815987
+Accuracy:0.9099145122628226
+Accuracy:0.9114457081589328
+Accuracy:0.9055761155218772
+Accuracy:0.9106801117015643
+Accuracy:0.9100421104669054
+Accuracy:0.9161669047903738
+Accuracy:0.9171877007285475
+Accuracy:0.9170601021517931
+Accuracy:0.9193569013046279
+Accuracy:0.9211432956395837
+Accuracy:0.9191017004091916
+Accuracy:0.9222916954936035
+Validation Accuracy:0.9384057858715886
+Validation Accuracy:0.9202898481617803
+Validation Accuracy:0.8876811538053595
+Validation Accuracy:0.8311594141566235
+Validation Accuracy:0.9478260732215383
+Validation Accuracy:0.8710144861884739
+Validation Accuracy:0.805797102658645
+Validation Accuracy:0.8760869477106177
+Validation Accuracy:0.8666666564734086
+Validation Accuracy:0.9166666580283124
+Validation Accuracy:0.8289855018905972
+Validation Accuracy:0.9036231779533884
+Validation Accuracy:0.8550724594489388
+Validation Accuracy:0.8942028906034387
+Validation Accuracy:0.9057970915151679
+Validation Accuracy:0.8289855018905972
+Validation Accuracy:0.7166666660619818
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.9159420145594556
+Validation Accuracy:0.8920289796331654
+Validation Accuracy:0.8985507177269977
+Validation Accuracy:0.8282608649005061
+Validation Accuracy:0.8659420207790707
+Validation Accuracy:0.8999999904114268
+Validation Accuracy:0.866666660360668
+Validation Accuracy:0.8166666601015173
+Validation Accuracy:0.8623188358286152
+Validation Accuracy:0.8086956467317499
+Validation Accuracy:0.9094202816486359
+Validation Accuracy:0.8601449196753295
+Loss:1.0430376617005244
+Loss:0.7637635866293908
+Loss:0.719896709445911
+Loss:0.6555642470863837
+Loss:0.626182633236429
+Loss:0.5968353108229482
+Loss:0.4940456248552683
+Loss:0.4714775798088649
+Loss:0.42033831544312666
+Loss:0.4195800703087829
+Loss:0.36693397837815667
+Loss:0.3810818005242457
+Loss:0.3767673373374462
+Loss:0.34849231577701406
+Loss:0.34126378831030446
+Loss:0.3228204763938049
+Loss:0.3137740538986389
+Loss:0.31835385576732855
+Loss:0.28400781137672204
+Loss:0.276926478160208
+Loss:0.27831506553057644
+Loss:0.2582069027584716
+Loss:0.26637474498541
+Loss:0.2588262806703686
+Loss:0.24716756748589566
+Loss:0.2593200587832351
+Loss:0.23783226062315405
+Loss:0.23384347839426656
+Loss:0.23625155548112678
+Loss:0.2310760746550405
+Validation Loss:0.26525184534409124
+Validation Loss:0.3087742155539277
+Validation Loss:0.43907110555016476
+Validation Loss:0.5594509577621585
+Validation Loss:0.19504964034295763
+Validation Loss:0.4383087125809296
+Validation Loss:0.6023296989176584
+Validation Loss:0.376414241998092
+Validation Loss:0.3999791880664618
+Validation Loss:0.24710737646597883
+Validation Loss:0.4611741367565549
+Validation Loss:0.30777083045762516
+Validation Loss:0.4090676391902177
+Validation Loss:0.3389238616370637
+Validation Loss:0.28387613513547444
+Validation Loss:0.49642896069132764
+Validation Loss:0.7098736834266911
+Validation Loss:0.48999110803655954
+Validation Loss:0.25781476951163745
+Validation Loss:0.3028026539022508
+Validation Loss:0.28119910071077553
+Validation Loss:0.45687619207993796
+Validation Loss:0.37884915458119434
+Validation Loss:0.3074401380575221
+Validation Loss:0.4132091558497885
+Validation Loss:0.5188340499349262
+Validation Loss:0.40868690869082575
+Validation Loss:0.49245513619288156
+Validation Loss:0.294519675652618
+Validation Loss:0.41751078872577
+Confusion MatrixTN:990 FP:182 FN:11 TP:197
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.84      0.91      1172
+     Litter       0.52      0.95      0.67       208
+
+avg / total       0.92      0.86      0.88      1380
+
+DATE:2018-10-11 20:30
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-12
+DATE:2018-10-11 20:42
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-12
+DATE:2018-10-11 20:42
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-12
+DATE:2018-10-11 20:44
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-12
+DATE:2018-10-11 20:44
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-14
+DATE:2018-10-11 20:47
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-14
+DATE:2018-10-11 20:47
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-14
+DATE:2018-10-11 20:47
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.889881334066604
+Accuracy:0.8949853276375895
+Accuracy:0.8985581221333477
+Accuracy:0.8972821242577783
+Accuracy:0.8975373236168948
+Accuracy:0.9086385095501275
+Accuracy:0.9092765121157564
+Accuracy:0.9037897148058702
+Accuracy:0.9076177155970006
+Accuracy:0.9122113056582609
+Accuracy:0.9097869117770767
+Accuracy:0.9058313141660725
+Accuracy:0.9117009091304245
+Accuracy:0.9124665073903069
+Accuracy:0.9189740987445865
+Accuracy:0.9188465005405038
+Accuracy:0.9205052969223598
+Accuracy:0.9191017008427076
+Accuracy:0.9162945025761516
+Accuracy:0.922291691302949
+Accuracy:0.9216536959701919
+Accuracy:0.9238228963257115
+Accuracy:0.9257368884008119
+Accuracy:0.9226744923418816
+Accuracy:0.9259920920418494
+Accuracy:0.9243332925265094
+Accuracy:0.9286716874040967
+Accuracy:0.9290544904280762
+Accuracy:0.9289268857668869
+Accuracy:0.92930968646357
+Validation Accuracy:0.9101449173429738
+Validation Accuracy:0.875362313312033
+Validation Accuracy:0.917391291131144
+Validation Accuracy:0.8688405739224475
+Validation Accuracy:0.9007246274015178
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.9391304228616797
+Validation Accuracy:0.9036231818406478
+Validation Accuracy:0.8949275262977766
+Validation Accuracy:0.8413043397924175
+Validation Accuracy:0.8855072389478269
+Validation Accuracy:0.8521739037140555
+Validation Accuracy:0.9101449186387269
+Validation Accuracy:0.897101438563803
+Validation Accuracy:0.8898550621841265
+Validation Accuracy:0.8934782536133475
+Validation Accuracy:0.8862318772336711
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.8673912986465122
+Validation Accuracy:0.8942028918991918
+Validation Accuracy:0.9268115836641063
+Validation Accuracy:0.9289855011131453
+Validation Accuracy:0.8376811574334684
+Validation Accuracy:0.9028985396675442
+Validation Accuracy:0.9231883922348851
+Validation Accuracy:0.9123188309047533
+Validation Accuracy:0.8543478198673414
+Validation Accuracy:0.876086950302124
+Validation Accuracy:0.876086950302124
+Validation Accuracy:0.8492753518664319
+Loss:0.4217892017187445
+Loss:0.39201230002754694
+Loss:0.37340080970036704
+Loss:0.3707880064725298
+Loss:0.33562335160917295
+Loss:0.30397817788720966
+Loss:0.29077575924282584
+Loss:0.3196063322863957
+Loss:0.2905783904280242
+Loss:0.273213395175542
+Loss:0.2661753036913647
+Loss:0.28177097379872273
+Loss:0.26908384258952145
+Loss:0.26389153241822194
+Loss:0.24609394379685512
+Loss:0.25153503970359375
+Loss:0.23666604125060126
+Loss:0.23903328592913847
+Loss:0.2425514162347316
+Loss:0.22893946284861516
+Loss:0.23219764159337072
+Loss:0.22775996824175299
+Loss:0.22890956262054074
+Loss:0.22844724129532254
+Loss:0.2108730493956901
+Loss:0.2148385974248788
+Loss:0.20815590290663816
+Loss:0.20593262662003772
+Loss:0.21738808466240628
+Loss:0.207997885375694
+Validation Loss:0.2765642854830493
+Validation Loss:0.35976972673898155
+Validation Loss:0.27072355377933255
+Validation Loss:0.40680197901699855
+Validation Loss:0.29281043917264626
+Validation Loss:0.46467490348479024
+Validation Loss:0.19375048168813405
+Validation Loss:0.2944938961578452
+Validation Loss:0.3104535814212716
+Validation Loss:0.434953468973222
+Validation Loss:0.3233100954929124
+Validation Loss:0.40518681154302927
+Validation Loss:0.2865566470376823
+Validation Loss:0.31751274382290634
+Validation Loss:0.33739029745692795
+Validation Loss:0.3298774896108586
+Validation Loss:0.34155066635297693
+Validation Loss:0.46589821253133856
+Validation Loss:0.39936418442622473
+Validation Loss:0.342950873400854
+Validation Loss:0.2768695014326469
+Validation Loss:0.2692608224309009
+Validation Loss:0.44217264684646024
+Validation Loss:0.30653970753369125
+Validation Loss:0.2990831418529801
+Validation Loss:0.31439124274513
+Validation Loss:0.44548310857752094
+Validation Loss:0.3827151996286019
+Validation Loss:0.39011331420877704
+Validation Loss:0.46978393099878146
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-14
+DATE:2018-10-11 20:47
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.889881334066604
+Accuracy:0.8949853276375895
+Accuracy:0.8985581221333477
+Accuracy:0.8972821242577783
+Accuracy:0.8975373236168948
+Accuracy:0.9086385095501275
+Accuracy:0.9092765121157564
+Accuracy:0.9037897148058702
+Accuracy:0.9076177155970006
+Accuracy:0.9122113056582609
+Accuracy:0.9097869117770767
+Accuracy:0.9058313141660725
+Accuracy:0.9117009091304245
+Accuracy:0.9124665073903069
+Accuracy:0.9189740987445865
+Accuracy:0.9188465005405038
+Accuracy:0.9205052969223598
+Accuracy:0.9191017008427076
+Accuracy:0.9162945025761516
+Accuracy:0.922291691302949
+Accuracy:0.9216536959701919
+Accuracy:0.9238228963257115
+Accuracy:0.9257368884008119
+Accuracy:0.9226744923418816
+Accuracy:0.9259920920418494
+Accuracy:0.9243332925265094
+Accuracy:0.9286716874040967
+Accuracy:0.9290544904280762
+Accuracy:0.9289268857668869
+Accuracy:0.92930968646357
+Validation Accuracy:0.9101449173429738
+Validation Accuracy:0.875362313312033
+Validation Accuracy:0.917391291131144
+Validation Accuracy:0.8688405739224475
+Validation Accuracy:0.9007246274015178
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.9391304228616797
+Validation Accuracy:0.9036231818406478
+Validation Accuracy:0.8949275262977766
+Validation Accuracy:0.8413043397924175
+Validation Accuracy:0.8855072389478269
+Validation Accuracy:0.8521739037140555
+Validation Accuracy:0.9101449186387269
+Validation Accuracy:0.897101438563803
+Validation Accuracy:0.8898550621841265
+Validation Accuracy:0.8934782536133475
+Validation Accuracy:0.8862318772336711
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.8673912986465122
+Validation Accuracy:0.8942028918991918
+Validation Accuracy:0.9268115836641063
+Validation Accuracy:0.9289855011131453
+Validation Accuracy:0.8376811574334684
+Validation Accuracy:0.9028985396675442
+Validation Accuracy:0.9231883922348851
+Validation Accuracy:0.9123188309047533
+Validation Accuracy:0.8543478198673414
+Validation Accuracy:0.876086950302124
+Validation Accuracy:0.876086950302124
+Validation Accuracy:0.8492753518664319
+Loss:0.4217892017187445
+Loss:0.39201230002754694
+Loss:0.37340080970036704
+Loss:0.3707880064725298
+Loss:0.33562335160917295
+Loss:0.30397817788720966
+Loss:0.29077575924282584
+Loss:0.3196063322863957
+Loss:0.2905783904280242
+Loss:0.273213395175542
+Loss:0.2661753036913647
+Loss:0.28177097379872273
+Loss:0.26908384258952145
+Loss:0.26389153241822194
+Loss:0.24609394379685512
+Loss:0.25153503970359375
+Loss:0.23666604125060126
+Loss:0.23903328592913847
+Loss:0.2425514162347316
+Loss:0.22893946284861516
+Loss:0.23219764159337072
+Loss:0.22775996824175299
+Loss:0.22890956262054074
+Loss:0.22844724129532254
+Loss:0.2108730493956901
+Loss:0.2148385974248788
+Loss:0.20815590290663816
+Loss:0.20593262662003772
+Loss:0.21738808466240628
+Loss:0.207997885375694
+Validation Loss:0.2765642854830493
+Validation Loss:0.35976972673898155
+Validation Loss:0.27072355377933255
+Validation Loss:0.40680197901699855
+Validation Loss:0.29281043917264626
+Validation Loss:0.46467490348479024
+Validation Loss:0.19375048168813405
+Validation Loss:0.2944938961578452
+Validation Loss:0.3104535814212716
+Validation Loss:0.434953468973222
+Validation Loss:0.3233100954929124
+Validation Loss:0.40518681154302927
+Validation Loss:0.2865566470376823
+Validation Loss:0.31751274382290634
+Validation Loss:0.33739029745692795
+Validation Loss:0.3298774896108586
+Validation Loss:0.34155066635297693
+Validation Loss:0.46589821253133856
+Validation Loss:0.39936418442622473
+Validation Loss:0.342950873400854
+Validation Loss:0.2768695014326469
+Validation Loss:0.2692608224309009
+Validation Loss:0.44217264684646024
+Validation Loss:0.30653970753369125
+Validation Loss:0.2990831418529801
+Validation Loss:0.31439124274513
+Validation Loss:0.44548310857752094
+Validation Loss:0.3827151996286019
+Validation Loss:0.39011331420877704
+Validation Loss:0.46978393099878146
+Confusion MatrixTN:973 FP:199 FN:9 TP:199
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.83      0.90      1172
+     Litter       0.50      0.96      0.66       208
+
+avg / total       0.92      0.85      0.87      1380
+
+DATE:2018-10-11 21:28
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-18
+DATE:2018-10-11 21:29
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-18
+DATE:2018-10-11 21:29
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:01
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 1024)              25691136  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 1024)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 2050      
+
+=================================================================
+
+Total params: 40,407,874
+
+Trainable params: 40,295,298
+
+Non-trainable params: 112,576
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:01
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 1024)              25691136  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 1024)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 2050      
+
+=================================================================
+
+Total params: 40,407,874
+
+Trainable params: 40,295,298
+
+Non-trainable params: 112,576
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:01
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 1024)              25691136  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 1024)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 2050      
+
+=================================================================
+
+Total params: 40,407,874
+
+Trainable params: 40,295,298
+
+Non-trainable params: 112,576
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6538216154140615
+Accuracy:0.7408447107581805
+Accuracy:0.9155289032134655
+Accuracy:0.9369656760594941
+Accuracy:0.9633788514900865
+Accuracy:0.9707796453927661
+Accuracy:0.9777976325599609
+Accuracy:0.967079247277778
+Accuracy:0.9803496331482254
+Validation Accuracy:0.3565217383961747
+Validation Accuracy:0.628985512515773
+Validation Accuracy:0.9086956502734751
+Validation Accuracy:0.9797101470007412
+Validation Accuracy:0.9289855054323224
+Validation Accuracy:0.9797101487284121
+Validation Accuracy:0.9724637706210648
+Validation Accuracy:0.9471014401187068
+Validation Accuracy:0.977536236030468
+Loss:0.8114967127912307
+Loss:0.5128374216438512
+Loss:0.23595161742856494
+Loss:0.17601832057066197
+Loss:0.11801023668167131
+Loss:0.09762141629967958
+Loss:0.07940299366538422
+Loss:0.15265242196595744
+Loss:0.06433866061607733
+Validation Loss:0.8181550269541533
+Validation Loss:0.5647603212923243
+Validation Loss:0.4127916025294774
+Validation Loss:0.10823048915093143
+Validation Loss:0.3356887933028781
+Validation Loss:0.1256090030344068
+Validation Loss:0.14091152774399499
+Validation Loss:0.26917106933567836
+Validation Loss:0.08662218803479134
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:01
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 1024)              25691136  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 1024)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 2050      
+
+=================================================================
+
+Total params: 40,407,874
+
+Trainable params: 40,295,298
+
+Non-trainable params: 112,576
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6538216154140615
+Accuracy:0.7408447107581805
+Accuracy:0.9155289032134655
+Accuracy:0.9369656760594941
+Accuracy:0.9633788514900865
+Accuracy:0.9707796453927661
+Accuracy:0.9777976325599609
+Accuracy:0.967079247277778
+Accuracy:0.9803496331482254
+Validation Accuracy:0.3565217383961747
+Validation Accuracy:0.628985512515773
+Validation Accuracy:0.9086956502734751
+Validation Accuracy:0.9797101470007412
+Validation Accuracy:0.9289855054323224
+Validation Accuracy:0.9797101487284121
+Validation Accuracy:0.9724637706210648
+Validation Accuracy:0.9471014401187068
+Validation Accuracy:0.977536236030468
+Loss:0.8114967127912307
+Loss:0.5128374216438512
+Loss:0.23595161742856494
+Loss:0.17601832057066197
+Loss:0.11801023668167131
+Loss:0.09762141629967958
+Loss:0.07940299366538422
+Loss:0.15265242196595744
+Loss:0.06433866061607733
+Validation Loss:0.8181550269541533
+Validation Loss:0.5647603212923243
+Validation Loss:0.4127916025294774
+Validation Loss:0.10823048915093143
+Validation Loss:0.3356887933028781
+Validation Loss:0.1256090030344068
+Validation Loss:0.14091152774399499
+Validation Loss:0.26917106933567836
+Validation Loss:0.08662218803479134
+Confusion MatrixTN:1151 FP:21 FN:7 TP:201
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.98      0.99      1172
+     Litter       0.91      0.97      0.93       208
+
+avg / total       0.98      0.98      0.98      1380
+
+DATE:2018-10-12 11:14
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:19
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:20
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:20
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:20
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.678065583895128
+Accuracy:0.8949853291586982
+Accuracy:0.9508740643130374
+Accuracy:0.9598060534425394
+Accuracy:0.9715452418957679
+Accuracy:0.9749904409330445
+Accuracy:0.9792012311038092
+Accuracy:0.9774148341905741
+Accuracy:0.9822636290260978
+Accuracy:0.9851984261812354
+Accuracy:0.9850708264560439
+Accuracy:0.9830292258561381
+Accuracy:0.9839224270203291
+Accuracy:0.9871124247134424
+Accuracy:0.9895368194920806
+Validation Accuracy:0.5195652149293734
+Validation Accuracy:0.9608695679816647
+Validation Accuracy:0.9753623216048531
+Validation Accuracy:0.9695652170457701
+Validation Accuracy:0.9514492750167847
+Validation Accuracy:0.9789855100106502
+Validation Accuracy:0.9746376859105151
+Validation Accuracy:0.9782608695652174
+Validation Accuracy:0.976086957299191
+Validation Accuracy:0.9797101500241653
+Validation Accuracy:0.949275363182676
+Validation Accuracy:0.9688405835110209
+Validation Accuracy:0.8644927476627239
+Validation Accuracy:0.9340579665225485
+Validation Accuracy:0.9666666647662288
+Loss:0.6894713683032223
+Loss:0.26658658391437284
+Loss:0.15939478616017352
+Loss:0.1324403110910119
+Loss:0.09217435213040451
+Loss:0.08042887988131547
+Loss:0.07387736090616388
+Loss:0.07376136132230166
+Loss:0.061442598928630264
+Loss:0.057194163404377545
+Loss:0.049361876861146056
+Loss:0.06986228583901798
+Loss:0.06725348975617904
+Loss:0.044641313543004296
+Loss:0.040921294802019774
+Validation Loss:0.6404573563216389
+Validation Loss:0.3111772488640702
+Validation Loss:0.13821321134657963
+Validation Loss:0.16110275715481545
+Validation Loss:0.26245408568639256
+Validation Loss:0.1036816176324003
+Validation Loss:0.1441240219266046
+Validation Loss:0.09351637925652355
+Validation Loss:0.1501125892813223
+Validation Loss:0.10959808519565621
+Validation Loss:0.22162040464742028
+Validation Loss:0.1956571932895568
+Validation Loss:0.7996419332381608
+Validation Loss:0.41610109671086504
+Validation Loss:0.1992735005982652
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 11:20
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-rotation 10degrees
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.678065583895128
+Accuracy:0.8949853291586982
+Accuracy:0.9508740643130374
+Accuracy:0.9598060534425394
+Accuracy:0.9715452418957679
+Accuracy:0.9749904409330445
+Accuracy:0.9792012311038092
+Accuracy:0.9774148341905741
+Accuracy:0.9822636290260978
+Accuracy:0.9851984261812354
+Accuracy:0.9850708264560439
+Accuracy:0.9830292258561381
+Accuracy:0.9839224270203291
+Accuracy:0.9871124247134424
+Accuracy:0.9895368194920806
+Validation Accuracy:0.5195652149293734
+Validation Accuracy:0.9608695679816647
+Validation Accuracy:0.9753623216048531
+Validation Accuracy:0.9695652170457701
+Validation Accuracy:0.9514492750167847
+Validation Accuracy:0.9789855100106502
+Validation Accuracy:0.9746376859105151
+Validation Accuracy:0.9782608695652174
+Validation Accuracy:0.976086957299191
+Validation Accuracy:0.9797101500241653
+Validation Accuracy:0.949275363182676
+Validation Accuracy:0.9688405835110209
+Validation Accuracy:0.8644927476627239
+Validation Accuracy:0.9340579665225485
+Validation Accuracy:0.9666666647662288
+Loss:0.6894713683032223
+Loss:0.26658658391437284
+Loss:0.15939478616017352
+Loss:0.1324403110910119
+Loss:0.09217435213040451
+Loss:0.08042887988131547
+Loss:0.07387736090616388
+Loss:0.07376136132230166
+Loss:0.061442598928630264
+Loss:0.057194163404377545
+Loss:0.049361876861146056
+Loss:0.06986228583901798
+Loss:0.06725348975617904
+Loss:0.044641313543004296
+Loss:0.040921294802019774
+Validation Loss:0.6404573563216389
+Validation Loss:0.3111772488640702
+Validation Loss:0.13821321134657963
+Validation Loss:0.16110275715481545
+Validation Loss:0.26245408568639256
+Validation Loss:0.1036816176324003
+Validation Loss:0.1441240219266046
+Validation Loss:0.09351637925652355
+Validation Loss:0.1501125892813223
+Validation Loss:0.10959808519565621
+Validation Loss:0.22162040464742028
+Validation Loss:0.1956571932895568
+Validation Loss:0.7996419332381608
+Validation Loss:0.41610109671086504
+Validation Loss:0.1992735005982652
+Confusion MatrixTN:1151 FP:21 FN:7 TP:201
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.98      0.99      1172
+     Litter       0.91      0.97      0.93       208
+
+avg / total       0.98      0.98      0.98      1380
+
+
+
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 14:57
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-brightness+rotation
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6624984056255686
+Accuracy:0.804134236354677
+Accuracy:0.9249712912437333
+Accuracy:0.954829655451724
+Accuracy:0.9646548495025556
+Accuracy:0.9686104436530376
+Accuracy:0.972438441059701
+Accuracy:0.9784356357492445
+Accuracy:0.9795840348427098
+Accuracy:0.9817532286498564
+Validation Accuracy:0.8289855010267617
+Validation Accuracy:0.9036231857279072
+Validation Accuracy:0.9405797072078871
+Validation Accuracy:0.9485507171223129
+Validation Accuracy:0.9753623151260874
+Validation Accuracy:0.9630434798157733
+Validation Accuracy:0.8862318798251774
+Validation Accuracy:0.9420289820519047
+Validation Accuracy:0.9239130434782609
+Validation Accuracy:0.9731884063154027
+Loss:0.6863221660764056
+Loss:0.45508997493500886
+Loss:0.2033848255155904
+Loss:0.14334729385960462
+Loss:0.11717589829424609
+Loss:0.08697624446716527
+Loss:0.0874196793945834
+Loss:0.07175889238334894
+Loss:0.06934722806534414
+Loss:0.05974650414659622
+Validation Loss:0.4672516072573869
+Validation Loss:0.36584054225164914
+Validation Loss:0.31698182832611643
+Validation Loss:0.23157063110367113
+Validation Loss:0.1135779966370783
+Validation Loss:0.18053108372091167
+Validation Loss:0.5415060073137283
+Validation Loss:0.2732317176499013
+Validation Loss:0.39862650411500444
+Validation Loss:0.15136312728788218
+Confusion MatrixTN:1151 FP:21 FN:13 TP:195
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.98      0.99      1172
+     Litter       0.90      0.94      0.92       208
+
+avg / total       0.98      0.98      0.98      1380
+
+DATE:2018-10-12 15:15
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:19
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-brightness
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:19
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-brightness
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:19
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-brightness
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.7103483449428593
+Accuracy:0.8993237191002877
+Accuracy:0.9441112720785327
+Accuracy:0.95750925800121
+Accuracy:0.9696312448694585
+Accuracy:0.9730764427735091
+Accuracy:0.9758836367277218
+Validation Accuracy:0.9347826048083927
+Validation Accuracy:0.9789855130340742
+Validation Accuracy:0.9710144944812941
+Validation Accuracy:0.9231884051924166
+Validation Accuracy:0.9463768096073814
+Validation Accuracy:0.9775362317112909
+Validation Accuracy:0.9659420329591503
+Loss:0.637744045368229
+Loss:0.2623003269715076
+Loss:0.16257710429354105
+Loss:0.12780406770884756
+Loss:0.0976634530150445
+Loss:0.08589918863625323
+Loss:0.08293663295470387
+Validation Loss:0.4050776204769162
+Validation Loss:0.09307063717152113
+Validation Loss:0.11168096848574562
+Validation Loss:0.4549501881111359
+Validation Loss:0.2582418720771059
+Validation Loss:0.11668823764025085
+Validation Loss:0.2300016793044473
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:19
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-brightness
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.7103483449428593
+Accuracy:0.8993237191002877
+Accuracy:0.9441112720785327
+Accuracy:0.95750925800121
+Accuracy:0.9696312448694585
+Accuracy:0.9730764427735091
+Accuracy:0.9758836367277218
+Validation Accuracy:0.9347826048083927
+Validation Accuracy:0.9789855130340742
+Validation Accuracy:0.9710144944812941
+Validation Accuracy:0.9231884051924166
+Validation Accuracy:0.9463768096073814
+Validation Accuracy:0.9775362317112909
+Validation Accuracy:0.9659420329591503
+Loss:0.637744045368229
+Loss:0.2623003269715076
+Loss:0.16257710429354105
+Loss:0.12780406770884756
+Loss:0.0976634530150445
+Loss:0.08589918863625323
+Loss:0.08293663295470387
+Validation Loss:0.4050776204769162
+Validation Loss:0.09307063717152113
+Validation Loss:0.11168096848574562
+Validation Loss:0.4549501881111359
+Validation Loss:0.2582418720771059
+Validation Loss:0.11668823764025085
+Validation Loss:0.2300016793044473
+Confusion MatrixTN:1162 FP:10 FN:19 TP:189
+             precision    recall  f1-score   support
+
+  No Litter       0.98      0.99      0.99      1172
+     Litter       0.95      0.91      0.93       208
+
+avg / total       0.98      0.98      0.98      1380
+
+DATE:2018-10-12 15:30
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:31
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-zoom-0.4
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:31
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-zoom-0.4
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:31
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-zoom-0.4
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6966951651446625
+Accuracy:0.8787801477454885
+Accuracy:0.9364552771587282
+Accuracy:0.9547020580081956
+Accuracy:0.9585300550878207
+Accuracy:0.9647824499883015
+Accuracy:0.9705244437063533
+Accuracy:0.9706520430132399
+Accuracy:0.9753732396903141
+Accuracy:0.9771596384973296
+Validation Accuracy:0.7659420280352883
+Validation Accuracy:0.9007246338802836
+Validation Accuracy:0.9318840546884398
+Validation Accuracy:0.9057970984258513
+Validation Accuracy:0.9818840545156727
+Validation Accuracy:0.918115938919178
+Validation Accuracy:0.9760869620502859
+Validation Accuracy:0.9804347870142563
+Validation Accuracy:0.9688405835110209
+Validation Accuracy:0.9789855078510616
+Loss:0.6188914913128449
+Loss:0.299786854899932
+Loss:0.18753437855512312
+Loss:0.14054184835282943
+Loss:0.1258069573598204
+Loss:0.11868899394170399
+Loss:0.0944993309110985
+Loss:0.09050164626989952
+Loss:0.08053320114254472
+Loss:0.07535783181705424
+Validation Loss:0.8833338810481887
+Validation Loss:0.4135145767443422
+Validation Loss:0.281675277520781
+Validation Loss:0.3694678034795367
+Validation Loss:0.08588082800902751
+Validation Loss:0.3409681133386018
+Validation Loss:0.10284283286149519
+Validation Loss:0.09520633076655044
+Validation Loss:0.1605886398423193
+Validation Loss:0.09453747497763539
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:31
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-zoom-0.4
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6966951651446625
+Accuracy:0.8787801477454885
+Accuracy:0.9364552771587282
+Accuracy:0.9547020580081956
+Accuracy:0.9585300550878207
+Accuracy:0.9647824499883015
+Accuracy:0.9705244437063533
+Accuracy:0.9706520430132399
+Accuracy:0.9753732396903141
+Accuracy:0.9771596384973296
+Validation Accuracy:0.7659420280352883
+Validation Accuracy:0.9007246338802836
+Validation Accuracy:0.9318840546884398
+Validation Accuracy:0.9057970984258513
+Validation Accuracy:0.9818840545156727
+Validation Accuracy:0.918115938919178
+Validation Accuracy:0.9760869620502859
+Validation Accuracy:0.9804347870142563
+Validation Accuracy:0.9688405835110209
+Validation Accuracy:0.9789855078510616
+Loss:0.6188914913128449
+Loss:0.299786854899932
+Loss:0.18753437855512312
+Loss:0.14054184835282943
+Loss:0.1258069573598204
+Loss:0.11868899394170399
+Loss:0.0944993309110985
+Loss:0.09050164626989952
+Loss:0.08053320114254472
+Loss:0.07535783181705424
+Validation Loss:0.8833338810481887
+Validation Loss:0.4135145767443422
+Validation Loss:0.281675277520781
+Validation Loss:0.3694678034795367
+Validation Loss:0.08588082800902751
+Validation Loss:0.3409681133386018
+Validation Loss:0.10284283286149519
+Validation Loss:0.09520633076655044
+Validation Loss:0.1605886398423193
+Validation Loss:0.09453747497763539
+Confusion MatrixTN:1157 FP:15 FN:10 TP:198
+             precision    recall  f1-score   support
+
+  No Litter       0.99      0.99      0.99      1172
+     Litter       0.93      0.95      0.94       208
+
+avg / total       0.98      0.98      0.98      1380
+
+DATE:2018-10-12 15:45
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:48
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-width-height
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:48
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-width-height
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:48
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-width-height
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6517800169665244
+Accuracy:0.7111139527172766
+Accuracy:0.8565777715666799
+Accuracy:0.9407936746145946
+Accuracy:0.9652928496039885
+Accuracy:0.9701416422034825
+Accuracy:0.9763940367769249
+Accuracy:0.9733316414177046
+Accuracy:0.9763940379101509
+Accuracy:0.9843052265837863
+Accuracy:0.9825188304311054
+Accuracy:0.985198426553907
+Accuracy:0.9892816207566187
+Accuracy:0.984177624189049
+Accuracy:0.9862192228343302
+Validation Accuracy:0.35942029035177786
+Validation Accuracy:0.3775362310850102
+Validation Accuracy:0.9456521760726321
+Validation Accuracy:0.9731884106345798
+Validation Accuracy:0.9739130476246709
+Validation Accuracy:0.9702898626742156
+Validation Accuracy:0.978260871724806
+Validation Accuracy:0.9615942114505215
+Validation Accuracy:0.976086954275767
+Validation Accuracy:0.9818840644497803
+Validation Accuracy:0.9710144944812941
+Validation Accuracy:0.948550726192585
+Validation Accuracy:0.9775362347347148
+Validation Accuracy:0.9724637736444888
+Validation Accuracy:0.9760869564353556
+Loss:0.728119446038135
+Loss:0.5842214507633469
+Loss:0.32193051040347503
+Loss:0.1731253666405138
+Loss:0.1090067614542996
+Loss:0.09225236331190521
+Loss:0.0773638412983834
+Loss:0.087756158282066
+Loss:0.07029092109397185
+Loss:0.050075582170014524
+Loss:0.06356409633171141
+Loss:0.04585586551919578
+Loss:0.037472727323874085
+Loss:0.0640800456123452
+Loss:0.04650409506774164
+Validation Loss:0.7460225099238796
+Validation Loss:0.708766872468202
+Validation Loss:0.21079334848816844
+Validation Loss:0.14229889845718507
+Validation Loss:0.10564573111849418
+Validation Loss:0.1324928093674606
+Validation Loss:0.11296851112358812
+Validation Loss:0.15366265042077587
+Validation Loss:0.1291452508919157
+Validation Loss:0.09802107307874341
+Validation Loss:0.13102528505513203
+Validation Loss:0.23797260174878698
+Validation Loss:0.13729297446653896
+Validation Loss:0.16953717193066858
+Validation Loss:0.15726757953888265
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 90
+layers to train:-18
+DATE:2018-10-12 15:48
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+KERAS model:VGG16-width-height
+TOP FCN:excluded
+Input Shape:224x224x3
+_________________________________________________________________
+
+Layer (type)                 Output Shape              Param #   
+
+=================================================================
+
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+
+_________________________________________________________________
+
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+
+_________________________________________________________________
+
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+
+_________________________________________________________________
+
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+
+_________________________________________________________________
+
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+
+_________________________________________________________________
+
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+
+_________________________________________________________________
+
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+
+_________________________________________________________________
+
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+
+_________________________________________________________________
+
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+
+_________________________________________________________________
+
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+
+_________________________________________________________________
+
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+
+_________________________________________________________________
+
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+
+_________________________________________________________________
+
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+
+_________________________________________________________________
+
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+
+_________________________________________________________________
+
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+
+_________________________________________________________________
+
+flatten_1 (Flatten)          (None, 25088)             0         
+
+_________________________________________________________________
+
+fc1 (Dense)                  (None, 2048)              51382272  
+
+_________________________________________________________________
+
+dropout_1 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+fc2 (Dense)                  (None, 2048)              4196352   
+
+_________________________________________________________________
+
+dropout_2 (Dropout)          (None, 2048)              0         
+
+_________________________________________________________________
+
+dense_1 (Dense)              (None, 2)                 4098      
+
+=================================================================
+
+Total params: 70,297,410
+
+Trainable params: 70,037,250
+
+Non-trainable params: 260,160
+
+_________________________________________________________________
+
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.6517800169665244
+Accuracy:0.7111139527172766
+Accuracy:0.8565777715666799
+Accuracy:0.9407936746145946
+Accuracy:0.9652928496039885
+Accuracy:0.9701416422034825
+Accuracy:0.9763940367769249
+Accuracy:0.9733316414177046
+Accuracy:0.9763940379101509
+Accuracy:0.9843052265837863
+Accuracy:0.9825188304311054
+Accuracy:0.985198426553907
+Accuracy:0.9892816207566187
+Accuracy:0.984177624189049
+Accuracy:0.9862192228343302
+Validation Accuracy:0.35942029035177786
+Validation Accuracy:0.3775362310850102
+Validation Accuracy:0.9456521760726321
+Validation Accuracy:0.9731884106345798
+Validation Accuracy:0.9739130476246709
+Validation Accuracy:0.9702898626742156
+Validation Accuracy:0.978260871724806
+Validation Accuracy:0.9615942114505215
+Validation Accuracy:0.976086954275767
+Validation Accuracy:0.9818840644497803
+Validation Accuracy:0.9710144944812941
+Validation Accuracy:0.948550726192585
+Validation Accuracy:0.9775362347347148
+Validation Accuracy:0.9724637736444888
+Validation Accuracy:0.9760869564353556
+Loss:0.728119446038135
+Loss:0.5842214507633469
+Loss:0.32193051040347503
+Loss:0.1731253666405138
+Loss:0.1090067614542996
+Loss:0.09225236331190521
+Loss:0.0773638412983834
+Loss:0.087756158282066
+Loss:0.07029092109397185
+Loss:0.050075582170014524
+Loss:0.06356409633171141
+Loss:0.04585586551919578
+Loss:0.037472727323874085
+Loss:0.0640800456123452
+Loss:0.04650409506774164
+Validation Loss:0.7460225099238796
+Validation Loss:0.708766872468202
+Validation Loss:0.21079334848816844
+Validation Loss:0.14229889845718507
+Validation Loss:0.10564573111849418
+Validation Loss:0.1324928093674606
+Validation Loss:0.11296851112358812
+Validation Loss:0.15366265042077587
+Validation Loss:0.1291452508919157
+Validation Loss:0.09802107307874341
+Validation Loss:0.13102528505513203
+Validation Loss:0.23797260174878698
+Validation Loss:0.13729297446653896
+Validation Loss:0.16953717193066858
+Validation Loss:0.15726757953888265
+Confusion MatrixTN:1149 FP:23 FN:2 TP:206
+             precision    recall  f1-score   support
+
+  No Litter       1.00      0.98      0.99      1172
+     Litter       0.90      0.99      0.94       208
+
+avg / total       0.98      0.98      0.98      1380
+
+DATE:2018-10-12 16:09

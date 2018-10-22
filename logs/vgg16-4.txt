@@ -1,0 +1,158 @@
+vgg16-fc1k-sm.1080Ti
+MODEL NAME: vgg16-fc1k-sm..h5
+JSON FILE: ./vgg16-fc1k-sm.arch.json
+WEIGHTS FILE: ./vgg16-fc1k-sm.weights.h5
+EPOCHS: 30
+layers to train:-8
+DATE:2018-10-11 19:49
+Image Size:224
+BATCH SIZE:100
+Number of classes:2
+input_1False
+block1_conv1False
+block1_conv2False
+block1_poolFalse
+block2_conv1False
+block2_conv2False
+block2_poolFalse
+block3_conv1False
+block3_conv2False
+block3_conv3False
+block3_poolFalse
+block4_conv1False
+block4_conv2False
+block4_conv3False
+block4_poolFalse
+block5_conv1False
+block5_conv2False
+block5_conv3False
+block5_poolFalse
+flatten_1False
+fc1True
+dropout_1True
+fc2True
+dropout_2True
+dense_1True
+Data Aug Train:shear_range=0.2,horizontal_flip=True,vertical_flip=True,fill_mode='nearest',zoom_range=0.2
+Data Aug Valid:
+Compilationoptimizer='rmsprop',    loss='categorical_crossentropy', metrics=['accuracy']
+Accuracy:0.8217430106836329
+Accuracy:0.8440729862834112
+Accuracy:0.8519841783719356
+Accuracy:0.8607885616918113
+Accuracy:0.8605333668503877
+Accuracy:0.8595125671398645
+Accuracy:0.8757177501654494
+Accuracy:0.8778869454024382
+Accuracy:0.8841393437634413
+Accuracy:0.8838841393770606
+Accuracy:0.8884777325261715
+Accuracy:0.8914125330505649
+Accuracy:0.8909021341954322
+Accuracy:0.897792521546169
+Accuracy:0.8972821226454031
+Accuracy:0.8990685195130049
+Accuracy:0.8991961223716805
+Accuracy:0.9013653199815987
+Accuracy:0.9099145122628226
+Accuracy:0.9114457081589328
+Accuracy:0.9055761155218772
+Accuracy:0.9106801117015643
+Accuracy:0.9100421104669054
+Accuracy:0.9161669047903738
+Accuracy:0.9171877007285475
+Accuracy:0.9170601021517931
+Accuracy:0.9193569013046279
+Accuracy:0.9211432956395837
+Accuracy:0.9191017004091916
+Accuracy:0.9222916954936035
+Validation Accuracy:0.9384057858715886
+Validation Accuracy:0.9202898481617803
+Validation Accuracy:0.8876811538053595
+Validation Accuracy:0.8311594141566235
+Validation Accuracy:0.9478260732215383
+Validation Accuracy:0.8710144861884739
+Validation Accuracy:0.805797102658645
+Validation Accuracy:0.8760869477106177
+Validation Accuracy:0.8666666564734086
+Validation Accuracy:0.9166666580283124
+Validation Accuracy:0.8289855018905972
+Validation Accuracy:0.9036231779533884
+Validation Accuracy:0.8550724594489388
+Validation Accuracy:0.8942028906034387
+Validation Accuracy:0.9057970915151679
+Validation Accuracy:0.8289855018905972
+Validation Accuracy:0.7166666660619818
+Validation Accuracy:0.8275362266146619
+Validation Accuracy:0.9159420145594556
+Validation Accuracy:0.8920289796331654
+Validation Accuracy:0.8985507177269977
+Validation Accuracy:0.8282608649005061
+Validation Accuracy:0.8659420207790707
+Validation Accuracy:0.8999999904114268
+Validation Accuracy:0.866666660360668
+Validation Accuracy:0.8166666601015173
+Validation Accuracy:0.8623188358286152
+Validation Accuracy:0.8086956467317499
+Validation Accuracy:0.9094202816486359
+Validation Accuracy:0.8601449196753295
+Loss:1.0430376617005244
+Loss:0.7637635866293908
+Loss:0.719896709445911
+Loss:0.6555642470863837
+Loss:0.626182633236429
+Loss:0.5968353108229482
+Loss:0.4940456248552683
+Loss:0.4714775798088649
+Loss:0.42033831544312666
+Loss:0.4195800703087829
+Loss:0.36693397837815667
+Loss:0.3810818005242457
+Loss:0.3767673373374462
+Loss:0.34849231577701406
+Loss:0.34126378831030446
+Loss:0.3228204763938049
+Loss:0.3137740538986389
+Loss:0.31835385576732855
+Loss:0.28400781137672204
+Loss:0.276926478160208
+Loss:0.27831506553057644
+Loss:0.2582069027584716
+Loss:0.26637474498541
+Loss:0.2588262806703686
+Loss:0.24716756748589566
+Loss:0.2593200587832351
+Loss:0.23783226062315405
+Loss:0.23384347839426656
+Loss:0.23625155548112678
+Loss:0.2310760746550405
+Validation Loss:0.26525184534409124
+Validation Loss:0.3087742155539277
+Validation Loss:0.43907110555016476
+Validation Loss:0.5594509577621585
+Validation Loss:0.19504964034295763
+Validation Loss:0.4383087125809296
+Validation Loss:0.6023296989176584
+Validation Loss:0.376414241998092
+Validation Loss:0.3999791880664618
+Validation Loss:0.24710737646597883
+Validation Loss:0.4611741367565549
+Validation Loss:0.30777083045762516
+Validation Loss:0.4090676391902177
+Validation Loss:0.3389238616370637
+Validation Loss:0.28387613513547444
+Validation Loss:0.49642896069132764
+Validation Loss:0.7098736834266911
+Validation Loss:0.48999110803655954
+Validation Loss:0.25781476951163745
+Validation Loss:0.3028026539022508
+Validation Loss:0.28119910071077553
+Validation Loss:0.45687619207993796
+Validation Loss:0.37884915458119434
+Validation Loss:0.3074401380575221
+Validation Loss:0.4132091558497885
+Validation Loss:0.5188340499349262
+Validation Loss:0.40868690869082575
+Validation Loss:0.49245513619288156
+Validation Loss:0.294519675652618
+Validation Loss:0.41751078872577

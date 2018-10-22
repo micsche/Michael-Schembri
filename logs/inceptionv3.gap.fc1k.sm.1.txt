@@ -1,5 +1,5 @@
 inceptionv3.gap.fc1k.sm.
-MODEL NAME: inceptionv3.gap.fc1k.sm..h5
+MODEL NAME: inceptionv3.max.fc1k.sm..h5
 JSON FILE: ./inceptionv3.gap.fc1k.sm.arch.json
 WEIGHTS FILE: ./inceptionv3.gap.fc1k.sm.weights.h5
 EPOCHS: 60

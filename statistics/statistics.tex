@@ -1,6 +1,7 @@
-\documentclass{article}
+\documentclass{IEEEtran}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{booktabs}
 \renewcommand{\baselinestretch}{1}
 \setlength{\textheight}{9in}
 \setlength{\textwidth}{6.5in}
@@ -12,7 +13,12 @@
 \setlength{\parindent}{.3in}
 \newtheorem{hypothesis}{Hypothesis}
 \newtheorem{nullhypothesis}{Null Hypothesis}
+\usepackage{gensymb}
+
+
 \begin{document}
+\onecolumn
+
 
 \section{Evaluation}
 
@@ -255,7 +261,7 @@ Validation accuracy increased to 0.79 at epoch 58. The number of trainable layer
 
 \begin{figure}[H]
 \centering
-\label{fig:incv3-gap-4}
+\label{fig:incv3-gap-65}
 \includegraphics[scale=0.6]{images/t1-i3-gap-sm-65.png}
 \caption{Inception Training Tasks GAP and Softmax Classifier - training last 65 layers}
 \end{figure}
@@ -315,7 +321,7 @@ A maximum validation accuracy of 0.987 is seen, where the curve is seen to level
 
 \subsubsection{Test 1: Sliding Window - Baseline}
 
-Sliding Windows inferencing over whole image. Tile of 224x224 is cropped from original image from a 224-32 grid, with 32 being the overlap allowed between the two tiles to allow for detection of objects at the edge of the tile. The last row and last column are recalculated to allow for mismatching image height and width to grid. \newline
+Sliding Window uses the convolutional neural network over the whole image. Tiles of 224x224 size are cropped from original image from a 192 grid ($192 = 224-32$), with 32 being the overlap allowed between the two tiles to allow for detection of objects at the edge of the tile. The last row and last column are recalculated to allow for mismatching image height and width to grid. \newline
 
 The tile passed to the VGG16 inferencing engine, which outputs a 2 unit tensor having values for [nolitter,litter]. The value of litter is stored in the detection grid. Bounding Box co-ordinates are obtained using tile co-ordinates for the tiles which inference results is higher than a preset confidence level. The bounding box predictions evaluated against the ground-truth values.\newline
 
@@ -359,9 +365,9 @@ This is a high recall rate indicating that litter is being detected successfully
 \item Correct Predictions
 \begin{figure}[H]
 \centering
-\label{fig:test1correct}
 \includegraphics[scale=0.4]{images/test1-correct.png}
 \caption{Sliding Window Correct Predictions}
+\label{fig:test1correct}
 \end{figure}
 
 Figure \ref{fig:test1correct} shows successful predictions on the Consumer drone test set. The large sliding window size and stride do not hinder the correct inferencing. The ratio of the size of the detected object is comparable to the inferencing window. Figure \ref{fig:test1correct}c and \ref{fig:test1correct}d show occlusion and deformations being detected adequately. To denote the specular aspect of the objects being detected.
@@ -369,31 +375,31 @@ Figure \ref{fig:test1correct} shows successful predictions on the Consumer drone
 \item Incorrect Predictions But Plausible
 \begin{figure}[H]
 \centering
-\label{fig:test1plausible}
 \includegraphics[scale=0.4]{images/test1-plausible.png}
-\caption{Sliding Window Incorrect put PlausiblePredictions}
+\caption{Sliding Window Incorrect put Plausible Predictions}
+\label{fig:test1plausible}
 \end{figure}
 
-Figure \ref{fig:test1plausible} shows a number of predictions that have not been annotated as beverage bottles, but which the algorithm has marked them as litter. These objects are frequent in the detected dataset. These artefacts found in outdoor imagery degrade the precision value, even though they could be successfully tagged as litter, though not beverage bottles or containers. The common aspect of these artefacts is that they are man-made objects, distinct from the background. Objects small as in figure \ref{fig:test1plausible}c are many. Human annotations of these small objects is very difficult.
+Figure \ref{fig:test1plausible} shows a number of predictions that have not been annotated as beverage bottles, but which the algorithm has marked them as litter. These objects are frequent in the detected dataset. These artefacts found in outdoor imagery degrade the precision value, even though they could be successfully tagged as litter, though not beverage bottles or containers. The common aspect of these artefacts is that they are man-made objects, distinct from the background. Objects small as in figure \ref{fig:test1plausible}c are very frequent. However the ability to detect these small objects, although enhancing the shift invariance of the algorithm, can have a major detrimental effect on the precision value, as anything with this feature can be tagged incorrectly as litter. Such reflective objects could be stones, sea reflections, glass fragments, etc....Human annotations of these small objects is very difficult.
 
 \item Incorrect Predictions that can be ammended
 \begin{figure}[H]
 \centering
-\label{fig:test1correctable}
 \includegraphics[scale=0.4]{images/test1-correctable.png}
 \caption{Sliding Window Incorrect Predictions that could possibly be corrected}
+\label{fig:test1correctable}
 \end{figure}
 
-Figure \ref{fig:test1correctable} shows example of uncorrect predictions that could possible by corrected. Figure \ref{fig:test1correctable}a shows a sky scene with branches that have been mistaken by the algorithm. This picture is evidently not an aerial image because sky can never be shown from a UAV with its camera shooting downwards. The imagery can easily be removed by filtering \textit{sky} image tiles within the pictures. Figure \ref{fig:test1correctable} (b) and (c) are scenes  depicting vegetation and branches that also have been incorrectly misdetected. The regular features of the twigs could be affecting the CNN. However, different to the \textit{sky} images, plastic and litter can be found within \textit{vegetation} imagery, therefore handling vegetation must be done by the RCNN. Figure \ref{fig:test1correctable}d is an image with no clear plastic or man-made features. There is no clear explanation why the RCNN mistook this for litter. However, like \textit{vegetation} RCNN can be made to detect this type of imagery as litter.
+Figure \ref{fig:test1correctable} shows example of uncorrect predictions that could possible by corrected. Figure \ref{fig:test1correctable}a shows a sky scene with branches that have been mistaken by the algorithm. This picture is evidently not an aerial image because sky can never be shown from a UAV with its camera shooting downwards. Accidental images such as these (during takeoff or landing of the drone) are possible and could be mistakenly placed within the dataset. The imagery can easily be removed by filtering \textit{sky} image tiles within the pictures. Figure \ref{fig:test1correctable} (b) and (c) are scenes  depicting vegetation and branches that also have been incorrectly misdetected. The regular features of the twigs could be affecting the CNN. However, different to the \textit{sky} images, plastic and litter can be found within \textit{vegetation} imagery, therefore handling vegetation must be done by the RCNN. Figure \ref{fig:test1correctable}d is an image with no clear plastic or man-made features. There is no clear explanation why the RCNN mistook this for litter. However, like \textit{vegetation} the RCNN could be trained to detect this type of imagery as terrain.
 
 \begin{figure}[H]
 \centering
-\label{fig:correctable2}
 \includegraphics[scale=0.4]{images/test1-unkown.png}
 \caption{Sliding Window Incorrect Predictions}
+\label{figcorrectable2}
 \end{figure}
 
-Figure \ref{fig:test1unkown}(a),(b) and (d) are images of stone incorrectly labelled as litter. Figure \ref{fig:test1unkown}(d) particularly depict stones with a specular features and shapes very similar to plastic or glass bottles. Surprisingly some scenes contain a lot of these stones, to the detriment of the algorithm precision. Figure \ref{fig:test1unkown}(c) show a very small feature affecting the classification of the CNN. This is the high sensitivity to the litter that has been designed within the dataset. This sensitivity might be the cause of the high False Positive number of the RCNN. Unfortunately regular features can be detected anywhere within the outdoor imagery but not be result of manufacture but by stone formations or shadows. \newline
+Figure \ref{figcorrectable2}(a),(b) and (d) are images of stone incorrectly labelled as litter. Figure \ref{figcorrectable2}(d) particularly depict stones with a specular features and shapes very similar to plastic or glass bottles. Surprisingly some scenes contain a lot of these stones, to the detriment of the algorithm precision. Figure \ref{figcorrectable2}(c) shows a very small feature, as described  in figure \ref{fig:test1plausible}c affecting the classification of the CNN. This is caused by the high sensitivity to litter that has been designed within the dataset. Such example caused by high litter sensitivity will cause a high False Positive number. Unfortunately regular features can be detected anywhere within the outdoor imagery but not be result of manufacture but by stone formations or shadows. \newline
 \end{enumerate}
 
 
@@ -404,11 +410,10 @@ GeoScience Drone Testing Results: \textbf{Average Precision 0.02} at IoU of 0.1.
 \item Correct Predictions
 \begin{figure}[H]
 \centering
-\label{fig:correct2}
 \includegraphics[scale=0.4]{images/test1-correct1.png}
 \caption{Sliding Window Correct Predictions from GeoScience Survey}
+\label{fig:correct2}
 {\tiny The red underline is to highlight the position of the object}
-\caption{Normal text }
 \end{figure}
 
 Figure \ref{fig:correct2} shows the correct predictions by the algorithm that have been detected. As expected the size of the objects are much smaller from the objects found in the Consumer database set. To note that the image quality is superior than the drone imagery, and the definitition of both the objects and the terrain is better. The quality difference might have an impact becuase of the regular features learnt by the CNN algorithm. The CNN is invariant of the position of the object, and the overlap in figure \ref{fig:correct2}(b) shows two nearby tiles detecting the same object.\newline
@@ -417,21 +422,20 @@ Figure \ref{fig:correct2} shows the correct predictions by the algorithm that ha
 \item Incorrect Predictions but plausible
 \begin{figure}[H]
 \centering
-\label{fig:plausible2}
 \includegraphics[scale=0.4]{images/test1-plausible1.png}
 \caption{Sliding Window Incorrect but plausible predictions from GeoScience Survey}
-\caption{Normal text }
+\label{fig:plausible2}
 \end{figure}
 
-Here again we see that the algorithm is detecting very linear features and man-made shapes as being litter. Although one can correctly define them as litter the CNN algorithm was trained on beverage bottles and containers. The features found within these objects are being extrapolated by the CNN. The CNN, as in case of \ref{fig:plausible2}(b) has managed to detect them even under occlusion. 
+Here again we see that the algorithm is detecting very linear features and man-made shapes as being litter. Although one can correctly define them as litter the CNN algorithm was trained on beverage bottles and containers. The smooth and linear edges found within these objects are being extrapolated by the CNN as bottles. The CNN, as in case of \ref{fig:plausible2}(b) has managed to detect occluded objects. 
 
 \item Incorrect Predictions that can be ammended
 \begin{figure}[H]
 \centering
-\label{fig:correctable2}
+
 \includegraphics[scale=0.4]{images/test1-correctable2.png}
 \caption{Sliding Window Incorrect predictions from GeoScience Survey (a) sea cover (b) rocky, grass and soil terrain}
-\caption{Normal text }
+\label{fig:correctable2}
 \end{figure}
 
 The geosciences dataset has a number of terrains not present in the consumer drone dataset. This has affected majorly the CNN inferencing ability on this dataset, why the precision rate for the GeoScience dataset is so low. The terrains in figure \ref{fig:correctable2} are an example of this imagery that are shown to be detected litter. Figure \ref{fig:correctable2}a is sea and the reflections on the ocean are being mistaken as specular reflections of bottles and glass. A large amount of incorrect predictions are being made, since the around 20\% of the survey is carried out over water. Since the application is for land-detection of litter, we can easily omit these by filtering these images out. With regards to \ref{fig:correctable2}b the CNN also is having a very large number of misdetections caused by unknown terrain. Removing such a terrain should be performed by modifying the litter detecting CNN, since plastic within this terrain should also be detected, and cannot be filtered out.
@@ -443,7 +447,7 @@ The geosciences dataset has a number of terrains not present in the consumer dro
 
 \subsection{Test 2: Class Activation Mapping}
 
-Once an annotator starts reviewing the images from aerial shots he would deduce the size the objects he should expect. The RCNN by nature is designed to be shift invariant. However, through other means, one can determine the object size from CNN inference.
+A human annotator will deduce the size of the objects once he starts reviewing the images from the aerial shots. The RCNN as shown is shift invariant to the cater very small objects as shown in figure \ref{fig:test1plausible}c and figure \ref{figcorrectable2}c. However, through Class Activation Mapping  one can determine the object size from CNN inference. A preliminary test on CAM methods has performed to compare it with the sliding window technique. The CAM 
 
 \subsection{Test 3: Pre-Filter}
 
@@ -455,6 +459,105 @@ Once an annotator starts reviewing the images from aerial shots he would deduce 
 
 \subsection{Test 7: Reduce Litter Sensitivity}
 
+\subsection{Best R-CNN - AP vs size}
+
+\subsection{Comparison with Peer Small Object Detection}
+
+\textit{Indoor Objects}: Krishna et al \cite{Krishna} in their improving of small object detection data, improve on R-CNN by including an upsampling autoencoder with skip connections to upscale low-resolution data. The inferencing is done by a Faster RCNN with VGG16 algorithm. The dataset is based on internal scenes using internal objects, with a lesser degree of variability than outdoor terrain, and the CNN are trained to categorise the objects between themselves rather than a foreground/background technique used by the aerial-litter study.
+
+\begin{table}[h]
+\caption{Average Precision for the R-CNN and RPN using upscaling or superresolution, a subset of results}
+\centering
+\begin{tabular}{lllll}
+\hline
+\textbf{Method}                         & \textbf{Mouse}            & \textbf{Phone}            & \textbf{T.box}            & \textbf{Jar}             \\ \hline
+\multicolumn{1}{|l|}{Faster R-CNN}      & \multicolumn{1}{l|}{57.7} & \multicolumn{1}{l|}{14.3} & \multicolumn{1}{l|}{8.1}  & \multicolumn{1}{l|}{3.1} \\ \hline
+\multicolumn{1}{|l|}{RPN and upscaling} & \multicolumn{1}{l|}{56.8} & \multicolumn{1}{l|}{16.4} & \multicolumn{1}{l|}{23.4} & \multicolumn{1}{l|}{4.1} \\ \hline
+RPN and superresolution                 & 60.1                      & 16.9                      & 12.8                      & 4.7                      \\ \hline
+\end{tabular}
+\end{table}
+
+The litter dataset of 700 instances is close to the Average precision obtained for the tissue box at 100 instances. Krishna et al \cite{Krishna} mentions that 6000 instances are deemed a very small dataset that limits the ability to fine-tune the RCNN. To denote that our bi-linear upscaling of the image does not improve the average precision of either test or geoscience aerial-litter dataset. The litter detection smaller average precision number can be attributed to the foreground vs unlimited background, whereas this result is object vs object classification average precision.\newline
+
+\textit{Traffic Signs}: Zhu et al \cite{Zhu2016} build an end-to-end CNN to detect and classify traffic signs. The signs. They report improvements in accuracy when data augmented with rotations between -20\degree and 20\degree. Something which we failed to see in our study. The dataset is based on 100000 scenes with 10,000 scenes containing 30,000 traffic signs, with images subdivided into theh COCO style image size categorisation of small (areas < $32^2$), medium (areas between $32^2$ and $96^2$) and large (area greater than $96^2$). They perform an easy filter by cropping 25\% top and 25\% bottom of the image since they presume no traffic signs will be located there. The comparison cannot be performed directly as the study relies only on recall values. They quote recall values of 0.24 for small objects, 0.74 for medium objects and 0.86 for large objects. In comparison, our RCNN fares very well with these values, as our recall values range from 0.82 to 0.9 for the datasets. Meng et al \cite{Meng2017} which use a similar sliding window approach to detect traffic signs. The dataset is based on 45 classes with more than 100 instances. The same size subsetting has been performed as Zhu et al\cite{Zhu2016}. The same recall-accuracy curves are obtained. \newline
+
+The Feature Pyramid Network for small object detection by Lin et al \cite{Lin2017a} is trained on COCO dataset trainval35k and tested on the minival set. The dataset contains 80k training and 35k validation, segmented. The architecture uses a feature pyramid network for scale invariancy, using Fast RCNN approach with modified Resnet-50. We obtain results on par of their small objects (<32) for our objects which are to be considered medium. Again the foreground/background terrain problem does not appear to be present within this dataset. The results are shown in the table \ref{fpnresults}.
+
+\begin{table}[]
+\centering
+\caption{Average Precision Results on COCO minival set}
+\label{fpnresults}
+\begin{tabular}{rccc}
+\hline
+\textbf{Fast R-CNN} & \textbf{AP\_\{s\}} & \multicolumn{1}{c|}{\textbf{AP\_\{m\}}} & \multicolumn{1}{c|}{\textbf{AP\_\{l\}}} \\ \hline
+FPN                 & 0.178              & 0.377                                   & 0.458                                   \\
+based on conv5      & 0.119              & 0.324                                   & 0.434                                   \\
+based on conv4      & 0.157              & 0.365                                   & 0.455                                  
+\end{tabular}
+\end{table}
+
+Atrous filter proposal by Guan et al \cite{Guan2017} does not specify the PASCAL VOC 2007 benchmark with a dataset being a mix of 16.5k images obtained from VOC2007 and VOC2012. The ARPN network uses a pyramid of filters to obtain different receptive fields. The AveragePrecision they quote is \textbf{0.114 for bottles} and 0.139 for plants, which is well on the par with our results.\newline
+
+Eggert et al \cite{ChristianEggertStephanBrehmAntonWinschelDanZecha2017} on a dataset of logos from FlickrLogos dataset.  The paper proposes new anchors setups and RPN on standard VGG16 architecture, and then combine to an integrated detection pipeline. The FlickrLogos images within the dataset are distinct images of man-made bold illustration on backgrounds that enhance visibility. The results are as per table \ref{tableeggert}, show very high mean average precision values as a result. Our scene background is to the detriment of object visibility rather than enhancement.
+
+\begin{table}[h]
+\centering
+\caption{Eggert et al \cite{ChristianEggertStephanBrehmAntonWinschelDanZecha2017} performance evaluation on FlickrLogos dataset}
+\begin{tabular}{lll}
+\hline
+\textbf{Configuration}                              & \textbf{RPN MABO}         & \textbf{CLS (mAP)}        \\ \hline
+\multicolumn{1}{|l|}{RPN performance}               & \multicolumn{1}{l|}{0.52} & \multicolumn{1}{l|}{0.51} \\ \hline
+\multicolumn{1}{|l|}{RPN with original anchor sets} & \multicolumn{1}{l|}{0.66} & \multicolumn{1}{l|}{0.62} \\ \hline
+\multicolumn{1}{|l|}{RPN with new anchor sets}      & \multicolumn{1}{l|}{0.68} & \multicolumn{1}{l|}{0.66} \\ \hline
+\multicolumn{1}{|l|}RPN with multiple feature map and sets  & \multicolumn{1}{l|}{0.69                    } & \multicolumn{1}{l|}{0.66}
+\end{tabular}
+\end{table}
+
+Another performance with a standard background is provided by the license plate recognition by Kim et al \cite{Kim2017}. The project uses DCNN which detects the presence of a number plate, the digits and the numbers within the same CNN architecture. The dataset was based on 200k postive images and 200k negative gray-scale images. DCNN achieves 0.993377 accuracy for license plate and 0.980266 for candidate regions. \newline
+
+The Perceptual GAN for small object detection by Li et al \cite{Li2017} also attempt the traffic sign detection. Using a perceptual generative adversial approach with the generative branch based on a VGG16 network creates a super-resolved representation for the traffic sign. The discriminator network is a two branch network an adversarial branch to differentiate between the super-resolved feature and the original image, and the perception branch  to define accuracy. The architecture was tested on the PASCAL VOC2007 achieving an \textbf{AP of 0.694, 0.602, 0.579 and 0.418 } for boat, bottle, chair, and plant, respectively. This is much higher than our test results however the comparison of a multi-terrain imagery is still to be tested.\newline
+
+
+
+\subsection{Comparison with Aerial Imagery Object Detection}
+
+\subsubsection{Vehicle Detection}
+
+Vehicle detection algorithms use the urban environment space characteristics to reduce the search space. Methods replace RPN from Faster R-CNN to accomodate this apriori knowledge. For example Deng et al \cite{Deng2017} develop the AVPN for this purpose, using the Munich Vehicle dataset. AVPN selects from the image the best location where to look for a vehicle. Knowing that vehicles can only be located on roads and drive-ways,  the precision rate is as high as as 0.8593 for AVPN basic and 0.9198 for AVPNbasic + fast R-CNN. The recall rate is on par with our results of 0.7473 to 0.7702. At a IoU value of 0.2, the average precision obtained is 0.65 to 0.8 on sample of ten test images. The background/foreground discrimination ability of the algorithm on this dataset is the determining factor why it achieves this AP. \newline
+
+The segment before detect approach as used by Audebert et al \cite{Audebert2017} use a SegNet a Segnet that produces semantic maps. The eroded regions obtained from the maps are sent to a vehicle detecting network based on LeNet, AlexNet and VGG-16. Regions of a default minimum size (as defined by the vehicle sizes seen) are removed. The author specifically remarks the improvement of evaluation scores when removing the small region areas. The data obtained from the VEDAI dataset containing detectable object of size $30 \times 30$. Various data augmentation techniques are  performed during training. Evaluation datasets used are VEDAI, which are 1268 scenes ($1024 \times 1024$ pixels), ISPRS Potsdam 38 scenes ($6000 \times 6000$ pixels), and NZAM Christchurch 4 images ($5000 \times 4000$ size). Precision and recall results are obtained in table \ref{tablesegementeval}.
+
+\begin{table}[h]
+\centering
+\caption{Vehicle detection results on the ISPRS Potsdam and NZAM/ONERA datasets}
+\label{tablesegementeval}
+\begin{tabular}{rcc}
+\hline
+\textbf{Dataset}                                                  & \multicolumn{1}{c|}{\textbf{Precision}} & \multicolumn{1}{c|}{\textbf{Recall}} \\ \hline
+\begin{tabular}[c]{@{}r@{}}NZAM/ONERA\\ Christchurch\end{tabular} & 0.833                                   & 0.791                                \\
+ISPRS Potsdam                                                     & 0.907                                   & 0.791                               
+\end{tabular}
+\end{table}
+
+
+
+\subsubsection{Other Aerial use of CNN}
+
+
+\subsection{Evaluation Conclusion}
+
+Comparing the aerial-litter detection results from the results obtained in the literature we find that the recall values are on the par with many papers, and some exceeding the detections available. However high recall with no precision is useless. A problem with our evaluation is our imposed limitation with respect to object we required identification. The CNN is able to find many more litter instances such as boots, paper/cartoon, plastic bags, cloth, etc... that would have increased the Average Precision values obtained. \newline
+
+When comparing the algorithm to a generic small object detection such as that of Krishna et al \cite{Krishna} we find that the RCNN has the same range of average precision values. Traffic signs, vehicles in an urban environment, logos etc... have a high discriminatary features between foreground and background, that makes the evaluation against these problems not comparable. The segmentation ability of the background within this vehicle detection evaluation is a clear marker of precision values obtained with a known background filter, such as a segmentation CNN pre-filter. This tallies with our pre-filter which achieved an increase in precision values within both of the datasets. However, the removal of specific backgrounds is impossible with the aerial-litter detection, as litter can be found anywhere on land. Therefore no land or land-type can be removed without reducing the recall values obtained. Vehicle detection have another advantage of being highly homongenuous in shape and colour.\newline
+
+A common aspect of the evaluation papers is the use of large annotated datasets and default evaluation methods. In the review of these papers, the evaluation vary a lot making comparisons between them hard enough. We used a default PASCAL VOC 2012 evaluation criters. The size of our dataset is small due to the time constraints for data gathering and the annotation. As can be seen from our tests whenever more raw data was included in the dataset our Average Precision got better. Data Augmentation is not a substitute for raw data as the iterations and permutations found in real-world imagery cannot be replicated using mathematical transformation. \newline
+
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{mybib}
 
 \end{document}
 

@@ -525,7 +525,7 @@ The Perceptual GAN for small object detection by Li et al \cite{Li2017} also att
 
 Vehicle detection algorithms use the urban environment space characteristics to reduce the search space. Methods replace RPN from Faster R-CNN to accomodate this apriori knowledge. For example Deng et al \cite{Deng2017} develop the AVPN for this purpose, using the Munich Vehicle dataset. AVPN selects from the image the best location where to look for a vehicle. Knowing that vehicles can only be located on roads and drive-ways,  the precision rate is as high as as 0.8593 for AVPN basic and 0.9198 for AVPNbasic + fast R-CNN. The recall rate is on par with our results of 0.7473 to 0.7702. At an IoU value of 0.2, the average precision obtained is 0.65 to 0.8 on sample of ten test images. The background/foreground discrimination ability of the algorithm on this dataset is the determining factor why it achieves this AP. \newline
 
-The segment before detect approach as used by Audebert et al \cite{Audebert2017} use a SegNet a Segnet that produces semantic maps. The eroded regions obtained from the maps are sent to a vehicle detecting network based on LeNet, AlexNet and VGG-16. Regions of a default minimum size (as defined by the vehicle sizes seen) are removed. The author specifically remarks the improvement of evaluation scores when removing the small region areas. The data obtained from the VEDAI dataset containing detectable object of size $30 \times 30$. Various data augmentation techniques are  performed during training. Evaluation datasets used are VEDAI, which are 1268 scenes ($1024 \times 1024$ pixels), ISPRS Potsdam 38 scenes ($6000 \times 6000$ pixels), and NZAM Christchurch 4 images ($5000 \times 4000$ size). Precision and recall results are obtained in table \ref{tablesegementeval}.
+The segment before detect approach as used by Audebert et al \cite{Audebert2017} use a SegNet a Segnet that produces semantic maps. The eroded regions obtained from the maps are sent to a vehicle detecting network based on LeNet, AlexNet and VGG-16. Regions of a default minimum size (as defined by the vehicle sizes seen) are removed. The author specifically remarks the improvement of evaluation scores when removing the small region areas. The data obtained from the VEDAI dataset \cite{razakarivony2016vehicle} containing detectable object of size $30 \times 30$. Various data augmentation techniques are  performed during training. Evaluation datasets used are VEDAI \cite{Razakarivony2015}, which are 1268 scenes ($1024 \times 1024$ pixels), ISPRS Potsdam 38 scenes ($6000 \times 6000$ pixels), and NZAM Christchurch 4 images ($5000 \times 4000$ size). Precision and recall results are obtained in table \ref{tablesegementeval}.
 
 \begin{table}[h]
 \centering
@@ -539,7 +539,46 @@ ISPRS Potsdam                                                     & 0.907       
 \end{tabular}
 \end{table}
 
-Another segmentation before classiffication technique performed by Nie et al \cite{Nie2018}. The algorithm combines the semantic labelling algorithm of FCN-D16 and Faster RCNN based on VGG-16 into one.  The paper downsizes image by a factor of 2,3,4 and  5 to cater for different ground spatial dimensions.
+Zhong et al \cite{Zhong2017} also use the VEDAI dataset \cite{razakarivony2016vehicle} in their VPN implementation replacing the Faster R-CNN RPN filter. VPN uses multiple feature maps instead of just the final one (like RPN) and proposes areas where vehicles might be located. The network is based on a VGG-16 network. Results and comparison to other methods is shown in table \ref{zhongtable}.
+
+\begin{table}[ht]
+\centering
+\caption{Results obtained by Zhong et al \cite{Zhong2017} using a VPN network proposal}
+\label{zhongtable}
+\begin{tabular}{rlccc}
+\hline
+\multicolumn{1}{|r|}{\textbf{Detection Model}} & \multicolumn{1}{l|}{\textbf{Image Size}} & \multicolumn{1}{c|}{\textbf{Recall}} & \multicolumn{1}{c|}{\textbf{AP}} & \multicolumn{1}{c|}{\textbf{F1-Score}} \\ \hline
+Faster R-CNN (Z\&F)                            & 1024 x 1024                              & 0.635                                & 0.308                            & .0229                                  \\
+Faster R-CNN (VGG-16)                          & 1024 x 1024                              & 0.739                                & 0.421                            & 0.232                                  \\
+Fast R-CNN (VGG-16)                            & 1024 x 1024                              & 0.722                                & 0.398                            & 0.216                                  \\
+SLIC with Z\&F                                 & 1024 x 1024                              & 0.583                                & 0.254                            & 0.066                                  \\
+SLIC with VGG-16                               & 1024 x 1024                              & 0.588                                & 0.232                            & 0.064                                  \\
+Our Model                                      & 1024 x 1024                              & 0.723                                & 0.546                            & 0.320                                  \\
+Faster R-CNN (Z\&F)                            & 512 x 512                                & 0.609                                & 0.320                            & 0.212                                  \\
+Faster R-CNN (VGG16)                           & 512 x 512                                & 0.714                                & 0.409                            & 0.225                                  \\
+Fast R-CNN(VGG16)                              & 512 x 512                                & 0.694                                & 0.373                            & 0.224                                  \\
+Our Model                                      & 512 x 512                                & 0.697                                & 0.502                            & 0.308                                 
+\end{tabular}
+\end{table}
+
+The table \cite{Zhong2017} shows that a Faster R-CNN used within this type of application acheives an AP of 0.308. With such a comparably small recall one should note that the AP is being augmented primarily by the precision obtained. The task at hand shows that the RCNN has high discrimintary features that enhances the vehicle detection accuracies obtained.\newline 
+
+
+Ammour et al \cite{Ammour2017} using the same UAV surveying technologoy for vehicle detection, uses mean-shift algorithm to segment the image into regions of the same HSV value. The classifier is based on a VGG16 architecture with an SVM classifier. Again a selection of regions is performed depending on size, with operations on the resultant mask to fill small holes, mask dilation and inspecting isolated regions. The regions were tuned by Meanshift to cover roughly one-tenth of the car, which would cover the different car features such as windscreen, roof, backscreen, side doors, etc... The results shown in table \ref{meanshiftveh}.
+
+\begin{table}[]
+\centering
+\caption{Ammour et al \cite{Ammour2017} detection results for vehicle detection using Mean-Shift}
+\label{meanshiftveh}
+\begin{tabular}{lcccll}
+\textbf{Test Image} & \textbf{Cars Present} & \textbf{TP} & \textbf{FP} & \textbf{Recall} & \textbf{Precision} \\
+Image 1             & 56                    & 47          & 4           & 0.839           & 0.922              \\
+Image 2             & 31                    & 26          & 10          & 0.839           & 0.722              \\
+Image 3             & 19                    & 14          & 7           & 0.737           & 0.667              \\
+Image 4             & 16                    & 13          & 0           & 0.813           & 1.000              \\
+Image 5             & 5                     & 4           & 2           & 0.800           & 0.667             
+\end{tabular}
+\end{table}
 
 
 \subsubsection{Other Aerial use of CNN}

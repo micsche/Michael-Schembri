@@ -30,6 +30,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-A}6}Train vs GeoScience Population}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-A}7}Statistical Results}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-B}}CNN Algorithm Testing}{5}}
+\citation{Thung2017}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-B}1}Dataset Preparation}{6}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-B}2}Gradient Descent Optimizers}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-C}}Algorithm Test Results}{6}}
@@ -43,75 +44,115 @@
 \newlabel{fig:incv3-gap-65}{{2}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Inception Training Tasks GAP and Softmax Classifier - training last 65 layers}}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-C}2}Resnet-50}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-C}3}MobileNetv2}{8}}
-\newlabel{fig:mob3-1}{{1}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces MobileNetv3 Training Flatten and Softmax Classifier - training Softmax only}}{9}}
-\newlabel{fig:mob3-2}{{1}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces MobileNetv3 Training Flatten and Softmax Classifier - training 13 layers}}{9}}
-\newlabel{fig:mob3-3}{{1}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces MobileNetv3 Training Flatten and Softmax Classifier - training 20 layers}}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-C}4}VGG-16}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-D}}R-CNN Evaluation}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-D}1}Test 1: Sliding Window - Baseline}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Dataset.v1}}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Validation Class Report}}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Sliding Window Correct Predictions}}{11}}
-\newlabel{fig:test1correct}{{17}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Sliding Window Incorrect put Plausible Predictions}}{12}}
-\newlabel{fig:test1plausible}{{18}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Sliding Window Incorrect Predictions that could possibly be corrected}}{12}}
-\newlabel{fig:test1correctable}{{19}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Sliding Window Incorrect Predictions}}{13}}
-\newlabel{figcorrectable2}{{20}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Sliding Window Correct Predictions from GeoScience Survey}}{13}}
-\newlabel{fig:correct2}{{21}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Sliding Window Incorrect but plausible predictions from GeoScience Survey}}{14}}
-\newlabel{fig:plausible2}{{22}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Sliding Window Incorrect predictions from GeoScience Survey (a) sea cover (b) rocky, grass and soil terrain}}{14}}
-\newlabel{fig:correctable2}{{23}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-C}3}MobileNetv3}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Mobilenetv3 Training Schedule}}{8}}
+\newlabel{mobilenetschedule}{{IV}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-C}4}VGG-16}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-D}}R-CNN Evaluation}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-D}1}Test 1: Sliding Window - Baseline}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Dataset.v1}}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Validation Class Report}}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Sliding Window Correct Predictions}}{10}}
+\newlabel{fig:test1correct}{{14}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Sliding Window Incorrect put Plausible Predictions}}{10}}
+\newlabel{fig:test1plausible}{{15}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Sliding Window Incorrect Predictions that could possibly be corrected}}{11}}
+\newlabel{fig:test1correctable}{{16}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Sliding Window Incorrect Predictions}}{11}}
+\newlabel{figcorrectable2}{{17}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Sliding Window Correct Predictions from GeoScience Survey}}{12}}
+\newlabel{fig:correct2}{{18}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Sliding Window Incorrect but plausible predictions from GeoScience Survey}}{12}}
+\newlabel{fig:plausible2}{{19}{12}}
 \citation{Krishna}
 \citation{Krishna}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Sliding Window Incorrect predictions from GeoScience Survey (a) sea cover (b) rocky, grass and soil terrain}}{13}}
+\newlabel{fig:correctable2}{{20}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-D}2}Comparison to other Small Object R-CNN}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-E}}Test 2: Class Activation Mapping}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-F}}Test 3: Pre-Filter}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-G}}Test 4: Dataset Engineering}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-H}}Test 5: Field of View}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-I}}Test 6: Further Data Augmentation}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-J}}Test 7: Reduce Litter Sensitivity}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-K}}Best R-CNN - AP vs size}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-L}}Comparison with Peer Small Object Detection}{13}}
 \citation{Zhu2016}
 \citation{Meng2017}
 \citation{Zhu2016}
 \citation{Lin2017a}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-D}2}Comparison to other Small Object R-CNN}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-E}}Test 2: Class Activation Mapping}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-F}}Test 3: Pre-Filter}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-G}}Test 4: Dataset Engineering}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-H}}Test 5: Field of View}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-I}}Test 6: Further Data Augmentation}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-J}}Test 7: Reduce Litter Sensitivity}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-K}}Best R-CNN - AP vs size}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-L}}Comparison with Peer Small Object Detection}{15}}
-\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Average Precision for the R-CNN and RPN using upscaling or superresolution, a subset of results}}{15}}
 \citation{Guan2017}
 \citation{ChristianEggertStephanBrehmAntonWinschelDanZecha2017}
 \citation{ChristianEggertStephanBrehmAntonWinschelDanZecha2017}
 \citation{Kim2017}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Average Precision for the R-CNN and RPN using upscaling or superresolution, a subset of results}}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Average Precision Results on COCO minival set}}{14}}
+\newlabel{fpnresults}{{VIII}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Eggert et al \cite  {ChristianEggertStephanBrehmAntonWinschelDanZecha2017} performance evaluation on FlickrLogos dataset}}{14}}
 \citation{Li2017}
+\citation{razakarivony2016vehicle}
 \citation{Deng2017}
 \citation{Audebert2017}
-\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Average Precision Results on COCO minival set}}{16}}
-\newlabel{fpnresults}{{VII}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Eggert et al \cite  {ChristianEggertStephanBrehmAntonWinschelDanZecha2017} performance evaluation on FlickrLogos dataset}}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-M}}Comparison with Aerial Imagery Object Detection}{16}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-M}1}Vehicle Detection}{16}}
+\citation{razakarivony2016vehicle}
+\citation{Razakarivony2015}
+\citation{Zhong2017}
+\citation{razakarivony2016vehicle}
+\citation{Zhong2017}
+\citation{Zhong2017}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-M}}Comparison with Aerial Imagery Object Detection}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-M}1}Detection in Urban Environments}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Vehicle detection results on the ISPRS Potsdam and NZAM/ONERA datasets}}{15}}
+\newlabel{tablesegementeval}{{X}{15}}
+\citation{Ammour2017}
+\citation{Ammour2017}
+\citation{Malof2016}
+\citation{Malof2016}
+\citation{Kellenberger2017}
+\@writefile{lot}{\contentsline {table}{\numberline {XI}{\ignorespaces Results obtained by Zhong et al \cite  {Zhong2017} using a VPN network proposal}}{16}}
+\newlabel{zhongtable}{{XI}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {XII}{\ignorespaces Ammour et al \cite  {Ammour2017} detection results for vehicle detection using Mean-Shift}}{16}}
+\newlabel{meanshiftveh}{{XII}{16}}
+\newlabel{curvepanel}{{\unhbox \voidb@x \hbox {I-M}1}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Precision Recall curve of RF/CNN panel detection by Malof et al \cite  {Malof2016}}}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-M}2}Other Aerial use of CNN}{16}}
+\citation{Kellenberger2017}
+\citation{Bowley2017}
+\citation{Bowley2017}
+\citation{Bowley2017}
+\citation{Bejiga2016}
+\citation{Szegedy2015}
+\citation{Bejiga2016}
 \citation{Krishna}
+\@writefile{lot}{\contentsline {table}{\numberline {XIII}{\ignorespaces Results for Fast UAV detection of animals by Kellenberger et al \cite  {Kellenberger2017}}}{17}}
+\newlabel{tablekellen}{{XIII}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {XIV}{\ignorespaces Testing Accuracy Results obtained by Bowley et al \cite  {Bowley2017} }}{17}}
+\newlabel{whitegeese}{{XIV}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {XV}{\ignorespaces Classification Results of Avalanche Search and Rescue by Bejiga et al \cite  {Bejiga2016}}}{17}}
+\newlabel{skiing}{{XV}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-N}}Evaluation Conclusion}{17}}
 \bibstyle{IEEEtran}
 \bibdata{mybib}
-\bibcite{Krishna}{1}
-\bibcite{Zhu2016}{2}
-\bibcite{Meng2017}{3}
-\bibcite{Lin2017a}{4}
-\bibcite{Guan2017}{5}
-\bibcite{ChristianEggertStephanBrehmAntonWinschelDanZecha2017}{6}
-\bibcite{Kim2017}{7}
-\bibcite{Li2017}{8}
-\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Vehicle detection results on the ISPRS Potsdam and NZAM/ONERA datasets}}{17}}
-\newlabel{tablesegementeval}{{IX}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {I-M}2}Other Aerial use of CNN}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {I-N}}Evaluation Conclusion}{17}}
-\@writefile{toc}{\contentsline {section}{References}{17}}
-\bibcite{Deng2017}{9}
-\bibcite{Audebert2017}{10}
+\bibcite{Thung2017}{1}
+\bibcite{Krishna}{2}
+\bibcite{Zhu2016}{3}
+\bibcite{Meng2017}{4}
+\bibcite{Lin2017a}{5}
+\bibcite{Guan2017}{6}
+\bibcite{ChristianEggertStephanBrehmAntonWinschelDanZecha2017}{7}
+\bibcite{Kim2017}{8}
+\bibcite{Li2017}{9}
+\bibcite{razakarivony2016vehicle}{10}
+\bibcite{Deng2017}{11}
+\bibcite{Audebert2017}{12}
+\bibcite{Razakarivony2015}{13}
+\bibcite{Zhong2017}{14}
+\bibcite{Ammour2017}{15}
+\bibcite{Malof2016}{16}
+\bibcite{Kellenberger2017}{17}
+\bibcite{Bowley2017}{18}
+\bibcite{Bejiga2016}{19}
+\bibcite{Szegedy2015}{20}
+\@writefile{toc}{\contentsline {section}{Appendix}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Mobilenetv3 Training and Testing on Dataset v3}{18}}
+\newlabel{mobilenet}{{A}{18}}
+\@writefile{toc}{\contentsline {section}{References}{18}}

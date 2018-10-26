@@ -183,22 +183,27 @@ An algorithm which is dependant on the size of the picture for successful recogn
 
 \subsection{CNN Algorithm Testing}
 
-Four CNN architectures will be testing for maximum validation accuracy results. The one with highest validation accuracy and highest Litter recall will be chosen. Each algorithm will be tested pre-trained with Imagenet weights. The fully connected layer at the end of the convolutional layers will be stripped off, and replaced by
+Four CNN architectures will be testing for maximum validation accuracy results. The one with highest validation accuracy and highest foreground accuracy, precision and recall will be chosen. Each algorithm to be tested will be preloaded with algorithm weights pretrained on Imagenet. The fully connected layer at the end of the convolutional layers will be stripped off, and replaced by
 \begin{enumerate}
 \item A connected layer with softmax activation,
 \item A connected layer with relu activation and a connected layer with softmax activation,
 \item Two connected layers with relu activation and a connected layer with softmax activation
 \end{enumerate}
 
-The connected layer with softmax activation will two class output. The connection layer between the Convolutional Layer and the Fully Connected Layer will be chosen from a Flatten layer, a Max Pooling Layer and a Global Average Pooling Layer. The testing will use the default layer used in the algorithm Imagenet training. If the training procedure does not converge, other layers will be tested.\newline
+The connected layer with softmax activation performs the two binary classifier between foreground and background. The connection layer between the Convolutional Layer and the Fully Connected Layer will be chosen from a Flatten layer, a Max Pooling Layer and a Global Average Pooling Layer. The layer used will depend on that specified by its relative academic paper when trained on the Imagenet database. If the training procedure does not converge, other layers will be tested.\newline
 
-At this stage the trainable layers will be reserved only for the new fully connected layers. The best algorithm setup will be chosen. Further algorithm tuning will be performed by allowing more layers inside the convolutional blocks to be trained. Incremental training will be performed on previous trained models. An epoch length of 60 will be used for testing. \newline
+At this stage the trainable layers will be reserved only for the new fully connected layers. The best algorithm setup will be chosen. Further algorithm tuning will be performed by allowing more layers inside the convolutional blocks to be trained. Incremental training will be performed on previous trained models. Early Stopping will limit the epochs trained. \newline
 
 \subsubsection{Dataset Preparation}
 
-One dataset will be compiled for all tests.
-
-The data will be fed using Keras ImageGenerator with inbuilt data augmentation algorithms. The options used for testing are as follows:
+One dataset will be compiled for all tests. The dataset will consist of 
+\begin{enumerate}
+\item Plastic set available from the trashnet database \cite{Thung2017},
+\item Plastic from the training set obtained from the Consumer Drone Survey,
+\item 10 random background images obtained from the training set obtained from the Consumer Drone Survey,
+\end{enumerate}
+\par
+The data will be fed using Keras ImageGenerator with inbuilt data augmentation algorithms. The options used for this testing are as follows:
 \begin{enumerate}
 \item Preprocessing Function: Keras provides algorithm specific preprocessing functions that transform an image to an output tensor of the same shape,
 \item Shear range 0.2 : Angle of shear in degrees,
@@ -207,14 +212,10 @@ The data will be fed using Keras ImageGenerator with inbuilt data augmentation a
 \item Zoom Range 0.2: Random zoom between 0.8 and 1.2 of the image size.
 \end{enumerate}
 
-All algorithms will have a default input tensor size of $224 x 224$.
-The fill-mode parameter is set to true so that no black areas appear within the image. Later RCNN tuning will test more data augment parameters and parameter ranges. \newline
+All algorithms will have a default input tensor size of $224 x 224$. The fill-mode parameter is set to true so that no black areas appear within the image. Later RCNN tuning will test more data augment parameters and parameter ranges. \newline
 
-Validation will only be processed. No augmentation of this set is performed.\newline
+Validation will only be preprocessed, but no augmentation of this set is performed.\newline
 
-
-Training Batch size : 150
-Validation Batch size: 50
 
 \subsubsection{Gradient Descent Optimizers}
 
@@ -275,44 +276,34 @@ Incrementing the FCN to two layers produced an neural network without high value
 
 
 
-\subsubsection{MobileNetv2}
+\subsubsection{MobileNetv3}
 
-A successful mobilenetv2 implementation will help us increase the speed of all subsequent inferencing. The default depth multiplier of 1 and default number of filters in the layer will be used as per paper. 
+A successful mobilenetv3 implementation will help us increase the speed of all subsequent inferencing. The default depth multiplier of 1 and default number of filters in the layer will be used as per paper. Detailed mobilenetv3 results are available in Appendix \ref{mobilenet}.
 
-Two connection layers will be used Flatten and GlobalAveragePooling layer.
+Mobilenetv3 test first using the Convolution Block and Softmax classifier directly to the two classes denoting foreground and background. The conv blocks and the classifier will be linked using Flatten or GlobalAveragePooling layer. Learning Rate 1e-5 used with RMSProp optimizer. Training Batch size 150 and Validation batch size 50. EarlyStopping is used as a regularizer with patience of 10 epoch training iterations. Results found in table \ref{mobilenetschedule}.
 
-\begin{enumerate}
-\item Mobilenet with Flatten Layer and Softmax Classifier 
-
-Maximum Validation accuracy of 0.944 acheived at epoch 53. Training curve is gradual, whilst validation curve is constant with single degredatation points.
-
-\begin{figure}[H]
+\begin{table}[ht]
 \centering
-\label{fig:mob3-1}
-\includegraphics[scale=0.6]{images/mob3-1.png}
-\caption{MobileNetv3 Training Flatten and Softmax Classifier - training Softmax only}
-\end{figure}
+\caption{Mobilenetv3 Training Schedule}
+\label{mobilenetschedule}
+\begin{tabular}{|l|l|l|} 
+\hline
+\textbf{MobileNetv3 architecture}                & \textbf{Maximum Accuracy }& \textbf{Epoch  }\\ 
+\hline
+Mobilenetv3+Flatten+SM                  & 0.8310           & 6      \\
+Mobilenetv3+GAP+SM                      & 0.8233           & 55     \\
+Mobilenetv3+GAP+FC1K+SM                 & 0.8442           & 12     \\
+Mobilenetv3+GAP+FC2K+SM                 & 0.8674           & 10     \\
+Mobilenetv3+GAP+FC4K+SM                 & 0.8645           & 15     \\
+Mobilenetv3+GAP+FC2K+FC2K+SM            & 0.8188           & 50     \\
+Mobilenetv3+GAP+FC2K+SM (conv13)        & 0.9514           & 50     \\
+Mobilenetv3+GAP+FC2K+SM (conv12,conv13) & 0.9514           & 50     \\
+\hline
+\end{tabular}
+\end{table}
 
-Incremental training on previous architecture using 13 trainable layers. The maximum validation accuracy increased to 0.966. The validation accuracy is not incrementing, showing an overfitting of the training data. Training accuracy has a gradual increase from training epoch 40 onwards.
+The flatten layer in the first training gave an erratic training curve, so a GlobalAveragePooling layer was used for the rest of the schedule. A fully connected layer was introduced with varying widths (FC1K = 1024 neurons, FC2K = 2048 neurons and FC4K = 4096), followed by dropout layer at a rate of 0.5 and ending with a two-class softmax classifier(SM). The best accuracy achieved was for the Mobilenetv3+GAP+FC2K+SM. An extra hidden layer of 2048 did not improve accuracies. The only trainable layers were the Fully Connected Layers introduced, so the schedule started training the deepest convolutional block layers of Mobilenetv3. Training \textit{conv13 }and \textit{conv12+conv13 } resulted in the same maximum accuracy so no further testing were performed on the dataset.
 
-\begin{figure}[H]
-\centering
-\label{fig:mob3-2}
-\includegraphics[scale=0.6]{images/mob3-2.png}
-\caption{MobileNetv3 Training Flatten and Softmax Classifier - training 13 layers}
-\end{figure}
-
-A maximum validation accuracy of 0.987 is seen, where the curve is seen to level off. 
-
-\begin{figure}[H]
-\centering
-\label{fig:mob3-3}
-\includegraphics[scale=0.6]{images/mob3-3.png}
-\caption{MobileNetv3 Training Flatten and Softmax Classifier - training 20 layers}
-\end{figure}
-
-
-\end{enumerate}
 
 
 \subsubsection{VGG-16}
@@ -521,11 +512,15 @@ The Perceptual GAN for small object detection by Li et al \cite{Li2017} also att
 
 \subsection{Comparison with Aerial Imagery Object Detection}
 
-\subsubsection{Vehicle Detection}
+Literature review of small objects use a disparate methods of evaluation. Accuracy and background accuracy, total recall and total precision are used, so direct comparisons are problematic. Official datasets such as the VEDAI dataset \cite{razakarivony2016vehicle} where comparative results are published, there is a higher tendency to use official metrics such as AP. The background accuracy is a misleading accuracy as the number of tiles marked as background in large images is a large number. A very high accuracy rating would still be greater than the number of foreground annotations in an image with a very high foreground to background ratio.\newline
 
-Vehicle detection algorithms use the urban environment space characteristics to reduce the search space. Methods replace RPN from Faster R-CNN to accomodate this apriori knowledge. For example Deng et al \cite{Deng2017} develop the AVPN for this purpose, using the Munich Vehicle dataset. AVPN selects from the image the best location where to look for a vehicle. Knowing that vehicles can only be located on roads and drive-ways,  the precision rate is as high as as 0.8593 for AVPN basic and 0.9198 for AVPNbasic + fast R-CNN. The recall rate is on par with our results of 0.7473 to 0.7702. At an IoU value of 0.2, the average precision obtained is 0.65 to 0.8 on sample of ten test images. The background/foreground discrimination ability of the algorithm on this dataset is the determining factor why it achieves this AP. \newline
+\subsubsection{Detection in Urban Environments}
 
-The segment before detect approach as used by Audebert et al \cite{Audebert2017} use a SegNet a Segnet that produces semantic maps. The eroded regions obtained from the maps are sent to a vehicle detecting network based on LeNet, AlexNet and VGG-16. Regions of a default minimum size (as defined by the vehicle sizes seen) are removed. The author specifically remarks the improvement of evaluation scores when removing the small region areas. The data obtained from the VEDAI dataset containing detectable object of size $30 \times 30$. Various data augmentation techniques are  performed during training. Evaluation datasets used are VEDAI, which are 1268 scenes ($1024 \times 1024$ pixels), ISPRS Potsdam 38 scenes ($6000 \times 6000$ pixels), and NZAM Christchurch 4 images ($5000 \times 4000$ size). Precision and recall results are obtained in table \ref{tablesegementeval}.
+Detection in urban environments make use of apriori knowledge of the urban background scenarios. Vehicle detection algorithms evaluated below use this knowledge to reduce the available search space. Methods replace RPN from Faster R-CNN to accomodate the distringuishing features of urban vs foreground images. \newline
+
+Deng et al \cite{Deng2017} develop the AVPN for this purpose, using the Munich Vehicle dataset. AVPN selects from the image the best location where to look for a vehicle. Knowing that vehicles can only be located on roads and drive-ways,  the precision rate is as high as as 0.8593 for AVPN basic and 0.9198 for AVPNbasic + fast R-CNN. The recall rate is on par with our results of 0.7473 to 0.7702. At an IoU value of 0.2, the average precision obtained is 0.65 to 0.8 on sample of ten test images. The background/foreground discrimination ability of the algorithm on this dataset is the determining factor why it achieves this AP. \newline
+
+The segment before detect approach as used by Audebert et al \cite{Audebert2017} use a SegNet a Segnet that produces semantic maps. The eroded regions obtained from the maps are sent to a vehicle detecting network based on LeNet, AlexNet and VGG-16. Regions of a default minimum size (as defined by the vehicle sizes seen) are removed. The author specifically remarks the improvement of evaluation scores when removing the small region areas. The data obtained from the VEDAI dataset \cite{razakarivony2016vehicle} containing detectable object of size $30 \times 30$. Various data augmentation techniques are  performed during training. Evaluation datasets used are VEDAI \cite{Razakarivony2015}, which are 1268 scenes ($1024 \times 1024$ pixels), ISPRS Potsdam 38 scenes ($6000 \times 6000$ pixels), and NZAM Christchurch 4 images ($5000 \times 4000$ size). Precision and recall results are obtained in table \ref{tablesegementeval}.
 
 \begin{table}[h]
 \centering
@@ -539,20 +534,122 @@ ISPRS Potsdam                                                     & 0.907       
 \end{tabular}
 \end{table}
 
-Another segmentation before classiffication technique performed by Nie et al \cite{Nie2018}. The algorithm combines the semantic labelling algorithm of FCN-D16 and Faster RCNN based on VGG-16 into one.  The paper downsizes image by a factor of 2,3,4 and  5 to cater for different ground spatial dimensions.
+Zhong et al \cite{Zhong2017} also use the VEDAI dataset \cite{razakarivony2016vehicle} in their VPN implementation replacing the Faster R-CNN RPN filter. VPN uses multiple feature maps instead of just the final one (like RPN) and proposes areas where vehicles might be located. The network is based on a VGG-16 network. Results and comparison to other methods is shown in table \ref{zhongtable}.
+
+\begin{table}[ht]
+\centering
+\caption{Results obtained by Zhong et al \cite{Zhong2017} using a VPN network proposal}
+\label{zhongtable}
+\begin{tabular}{rlccc}
+\hline
+\multicolumn{1}{|r|}{\textbf{Detection Model}} & \multicolumn{1}{l|}{\textbf{Image Size}} & \multicolumn{1}{c|}{\textbf{Recall}} & \multicolumn{1}{c|}{\textbf{AP}} & \multicolumn{1}{c|}{\textbf{F1-Score}} \\ \hline
+Faster R-CNN (Z\&F)                            & 1024 x 1024                              & 0.635                                & 0.308                            & .0229                                  \\
+Faster R-CNN (VGG-16)                          & 1024 x 1024                              & 0.739                                & 0.421                            & 0.232                                  \\
+Fast R-CNN (VGG-16)                            & 1024 x 1024                              & 0.722                                & 0.398                            & 0.216                                  \\
+SLIC with Z\&F                                 & 1024 x 1024                              & 0.583                                & 0.254                            & 0.066                                  \\
+SLIC with VGG-16                               & 1024 x 1024                              & 0.588                                & 0.232                            & 0.064                                  \\
+Our Model                                      & 1024 x 1024                              & 0.723                                & 0.546                            & 0.320                                  \\
+Faster R-CNN (Z\&F)                            & 512 x 512                                & 0.609                                & 0.320                            & 0.212                                  \\
+Faster R-CNN (VGG16)                           & 512 x 512                                & 0.714                                & 0.409                            & 0.225                                  \\
+Fast R-CNN(VGG16)                              & 512 x 512                                & 0.694                                & 0.373                            & 0.224                                  \\
+Our Model                                      & 512 x 512                                & 0.697                                & 0.502                            & 0.308                                 
+\end{tabular}
+\end{table}
+
+The table \cite{Zhong2017} shows that a Faster R-CNN used within this type of application acheives an AP of 0.308. With such a comparably small recall one should note that the AP is being augmented primarily by the precision obtained. The task at hand shows that the RCNN has high discrimintary features that enhances the vehicle detection accuracies obtained.\newline 
+
+
+Ammour et al \cite{Ammour2017} using the same UAV surveying technologoy for vehicle detection, uses mean-shift algorithm to segment the image into regions of the same HSV value. The classifier is based on a VGG16 architecture with an SVM classifier. Again a selection of regions is performed depending on size, with operations on the resultant mask to fill small holes, mask dilation and inspecting isolated regions. The regions were tuned by Meanshift to cover roughly one-tenth of the car, which would cover the different car features such as windscreen, roof, backscreen, side doors, etc... The results shown in table \ref{meanshiftveh}.
+
+\begin{table}[ht]
+\centering
+\caption{Ammour et al \cite{Ammour2017} detection results for vehicle detection using Mean-Shift}
+\label{meanshiftveh}
+\begin{tabular}{lcccll}
+\textbf{Test Image} & \textbf{Cars Present} & \textbf{TP} & \textbf{FP} & \textbf{Recall} & \textbf{Precision} \\
+Image 1             & 56                    & 47          & 4           & 0.839           & 0.922              \\
+Image 2             & 31                    & 26          & 10          & 0.839           & 0.722              \\
+Image 3             & 19                    & 14          & 7           & 0.737           & 0.667              \\
+Image 4             & 16                    & 13          & 0           & 0.813           & 1.000              \\
+Image 5             & 5                     & 4           & 2           & 0.800           & 0.667             
+\end{tabular}
+\end{table}
+
+Different to vehicle detection but still using the urban environment distinguishing features is the Solar Photovoltaic Array Detection as studied by Malof et al\cite{Malof2016}. The algorithm uses an ensemble of Random Forest and CNN algorithms. The RF prescreens the object locations and CNN detect the PV panels. The input image is to the CNN is a $40 \times 40$ image. The algorithm achieves a recall of 0.9. The precision recall curve is shown in figure \ref{curvepanel}.
+
+\begin{figure}[h]
+\centering
+\label{curvepanel}
+\includegraphics[scale=0.4]{images/pvpanels.png}
+\caption{Precision Recall curve of RF/CNN panel detection by Malof et al \cite{Malof2016}}
+\end{figure}
 
 
 \subsubsection{Other Aerial use of CNN}
 
+Other Aerial imagery applications do not have the urban environment of the vehicle detection, however most studies fail to mention the problematics of the high variable in the background. One should deduce that the studies did not encounter problems with the variable background.\newline
+
+The fast animal UAV detection by Kellenberger \cite{Kellenberger2017} uses 654 images from the SAVMAP project, from the Kuzikus Wildlife reserve park in Namibia. Kellenberger reduces the IoU threshold to 0.25 (as for all small object detection methods). The pre-trained Alexnet used is trained on animals against background. Improvments on the CNN is a two-branch approach that also calculates the size of the objects detected as a classifying feature. No mention of the type of backgrounds in the images is mentioned. Results shown in table \ref{tablekellen}. 
+
+\begin{table}[ht]
+\centering
+\caption{Results for Fast UAV detection of animals by Kellenberger et al \cite{Kellenberger2017}}
+\label{tablekellen}
+\begin{tabular}{lcc}
+\textbf{}                            & \textbf{Fast R-CNN (baseline)} & \textbf{Proposed Model} \\
+Ground-Truth Objects                 & 509                            & 509                     \\
+True Positives                       & 429                            & 379                     \\
+\multicolumn{1}{l|}{False Positives} & 843                            & 254                     \\
+False Negatives                      & 80                             & 130                     \\
+Precision                            & 0.34                           & 0.60                    \\
+Recall                               & 0.84                           & 0.74                    \\
+F1-Score                             & 0.48                           & 0.66                   
+\end{tabular}
+\end{table}
+
+Another aerial imagery use of CNN algorithms in ecological projects, is the detection of white geese by Bowley et al \cite{Bowley2017}. The study identifies the problematics of background variability, and stresses the importance the use of a lot of data. In fact Bowley et al \cite{Bowley2017} use a dataset of 65,000 annotated images. Very high altitudes were used, for geese detection, using a 16Mpixel camera. The CNN used an image detection of $18 x 18$ pixel, since the end objects were of 14 - 18 pixels in width/height. A custom CNN used with 2 convolutional layers and 2 fully connected layers. Training was done of white geese versus background. The results obtained are shown in table \ref{whitegeese}.
+
+\begin{table}[ht]
+\centering
+\caption{Testing Accuracy Results obtained by Bowley et al \cite{Bowley2017} }
+\label{whitegeese}
+\begin{tabular}{rccc}
+\textbf{CNN} & \textbf{\begin{tabular}[c]{@{}c@{}}White Phase\\ (geese)\end{tabular}} & \textbf{Background} & \textbf{Total} \\
+Expert       & 0.9626                                                                 & 0.9991              & 0.9981         \\
+Matched      & 0.9152                                                                 & 0.9995              & 0.9976         \\
+Unmatched    & 0.9526                                                                 & 0.9975              & 0.9964        
+\end{tabular}
+\end{table}
+
+Matched observations are the joint annotations done by both experts and citizens. An error rate of 0.9995 on a $3000 \times 2000$ image creates 9 False Positive per scene, which is not such a distant metric than that obtained by the aerial litter detection method.
+
+
+Avalanche search and rescue project for real-time object detection by a UAV, is an CNN application studied by Begija et al \cite{Bejiga2016} uses a pretrained GoogleNet \cite{Szegedy2015} but with an SVM classifier. A sliding window approach is used on $224 \times 224$ tiles. The results report is in the form of $P_{FA}$ (probability of negative samples) and $P_{TP}$ (probability of positive samples). This can be misleading because the $P_{FA}$ against the whole background can result in a significant amount of tiles. The results are shown in table \ref{skiing}. 
+
+\begin{table}[ht]
+\centering
+\caption{Classification Results of Avalanche Search and Rescue by Bejiga et al \cite{Bejiga2016}}
+\label{skiing}
+\begin{tabular}{llll}
+\textbf{}                                                 & \textbf{Accuracy} & \textbf{$P_{FA}$} & \textbf{$P_{TP}$} \\
+Downsample of whole image to $224 \times 224$             & 0.6571            & 0.5283          & 0.8462          \\
+Downsample of $672 \times 448$ tiles to  $224 \times 224$ & 0.9429            & 0.1095          & 0.6346          \\
+Sliding Window                                            & 0.9759            & 0.0152          & 0.8065         
+\end{tabular}
+\end{table}
 
 \subsection{Evaluation Conclusion}
 
 Comparing the aerial-litter detection results from the results obtained in the literature we find that the recall values are on the par with many papers, and some exceeding the detections available. However high recall with no precision is useless. A problem with our evaluation is our imposed limitation with respect to object we required identification. The CNN is able to find many more litter instances such as boots, paper/cartoon, plastic bags, cloth, etc... that would have increased the Average Precision values obtained. \newline
 
-When comparing the algorithm to a generic small object detection such as that of Krishna et al \cite{Krishna} we find that the RCNN has the same range of average precision values. Traffic signs, vehicles in an urban environment, logos etc... have a high discriminatary features between foreground and background, that makes the evaluation against these problems not comparable. The segmentation ability of the background within this vehicle detection evaluation is a clear marker of precision values obtained with a known background filter, such as a segmentation CNN pre-filter. This tallies with our pre-filter which achieved an increase in precision values within both of the datasets. However, the removal of specific backgrounds is impossible with the aerial-litter detection, as litter can be found anywhere on land. Therefore no land or land-type can be removed without reducing the recall values obtained. Vehicle detection have another advantage of being highly homongenuous in shape and colour.\newline
+When comparing the algorithm to a generic small object detection such as that of Krishna et al \cite{Krishna} we find that the RCNN has the same range of average precision values. Traffic signs, vehicles in an urban environment, logos etc... have a high discriminatary features between foreground and background, that makes the evaluation against these problems not comparable. The segmentation ability of the background within this vehicle detection evaluation is a clear marker of precision values obtained with a known background filter, such as a segmentation CNN pre-filter. This tallies with our pre-filter which achieved an increase in precision values within both of the datasets. However, the removal of specific backgrounds is impossible with the aerial-litter detection, as litter can be found anywhere on land. Therefore no land or land-type can be removed without reducing the recall values obtained. Vehicle detection and solar panels have another advantage of being highly homongenuous in size, shape and colour.\newline
 
 A common aspect of the evaluation papers is the availability of large annotated datasets and default evaluation methods. In the review of these papers, the evaluation vary a lot making comparisons between them hard enough. We used a default PASCAL VOC 2012 evaluation criters. The size of our dataset is small due to the time constraints that limited data gathering and annotation. As can be seen from our tests whenever more raw data was included in the dataset our Average Precision got better. Data Augmentation is not a substitute for raw data as the iterations and permutations found in real-world imagery cannot be replicated using mathematical transformation. \newline
 
+\appendix
+
+\subsection{Mobilenetv3 Training and Testing on Dataset v3}
+\label{mobilenet}
 
 
 \bibliographystyle{IEEEtran}

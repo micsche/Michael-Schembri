@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Thung2017}
+\BIBentryALTinterwordspacing
+G.~Thung, ``{Dataset of images of trash},'' 2017. [Online]. Available:
+  \url{https://github.com/garythung/trashnet}
+\BIBentrySTDinterwordspacing
+
 \bibitem{Krishna}
 \BIBentryALTinterwordspacing
 H.~Krishna and C.~V. Jawahar, ``{Improving Small Object Detection}.'' [Online].
@@ -75,6 +81,11 @@ J.~Li, X.~Liang, Y.~Wei, T.~Xu, J.~Feng, and S.~Yan, ``{Perceptual Generative
   [Online]. Available: \url{http://arxiv.org/abs/1706.05274}
 \BIBentrySTDinterwordspacing
 
+\bibitem{razakarivony2016vehicle}
+S.~Razakarivony and F.~Jurie, ``{Vehicle Detection in Aerial Imagery : A Small
+  Target Detection Benchmark},'' \emph{Journal of Visual Communication and
+  Image Representation}, vol.~34, pp. 187--203, 2015.
+
 \bibitem{Deng2017}
 Z.~Deng, H.~Sun, S.~Zhou, J.~Zhao, and H.~Zou, ``{Toward Fast and Accurate
   Vehicle Detection in Aerial Images Using Coupled Region-Based Convolutional
@@ -85,5 +96,53 @@ Z.~Deng, H.~Sun, S.~Zhou, J.~Zhao, and H.~Zou, ``{Toward Fast and Accurate
 N.~Audebert, B.~{Le Saux}, and S.~Lef{\`{e}}vre, ``{Segment-before-detect:
   Vehicle detection and classification through semantic segmentation of aerial
   images},'' \emph{Remote Sensing}, vol.~9, no.~4, 2017.
+
+\bibitem{Razakarivony2015}
+S.~Razakarivony and F.~Jurie, ``{Vehicle Detection in Aerial Imagery : A Small
+  Target Detection Benchmark},'' \emph{Journal of Visual Communication and
+  Image Representation}, vol.~34, pp. 187--203, 2015.
+
+\bibitem{Zhong2017}
+\BIBentryALTinterwordspacing
+Z.~Zhong, L.~Zheng, G.~Kang, S.~Li, and Y.~Yang, ``{Random Erasing Data
+  Augmentation},'' 2017. [Online]. Available:
+  \url{http://arxiv.org/abs/1708.04896}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Ammour2017}
+N.~Ammour, H.~Alhichri, Y.~Bazi, B.~Benjdira, N.~Alajlan, and M.~Zuair, ``{Deep
+  learning approach for car detection in UAV imagery},'' \emph{Remote Sensing},
+  vol.~9, no.~4, 2017.
+
+\bibitem{Malof2016}
+J.~M. Malof, K.~Bradbury, L.~M. Collins, and R.~G. Newell, ``{A Deep
+  Convolutional Neural Network and a Random Forest Classifier for Solar
+  Photovoltaic Array Detection in Aerial Imagery},'' \emph{International
+  Conference on Renewable Energy Research and Applications (ICRERA)}, vol.~5,
+  pp. 650--654, 2016.
+
+\bibitem{Kellenberger2017}
+B.~Kellenberger, M.~Volpi, and D.~Tuia, ``{Fast animal detection in UAV images
+  using convolutional neural networks},'' \emph{International Geoscience and
+  Remote Sensing Symposium (IGARSS)}, vol. 2017-July, pp. 866--869, 2017.
+
+\bibitem{Bowley2017}
+C.~Bowley, M.~Mattingly, A.~Barnas, S.~Ellis-Felege, and T.~Desell, ``{Toward
+  using citizen scientists to drive automated ecological object detection in
+  aerial imagery},'' \emph{Proceedings - 13th IEEE International Conference on
+  eScience, eScience 2017}, pp. 99--108, 2017.
+
+\bibitem{Bejiga2016}
+M.~B. Bejiga, A.~Zeggada, and F.~Melgani, ``{Convolutional neural networks for
+  near real-time object detection from UAV imagery in avalanche search and
+  rescue operations},'' \emph{2016 IEEE International Geoscience and Remote
+  Sensing Symposium (IGARSS)}, pp. 693--696, 2016.
+
+\bibitem{Szegedy2015}
+\BIBentryALTinterwordspacing
+C.~Szegedy, V.~Vanhoucke, S.~Ioffe, J.~Shlens, and Z.~Wojna, ``{Rethinking the
+  Inception Architecture for Computer Vision},'' 2015. [Online]. Available:
+  \url{http://arxiv.org/abs/1512.00567}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

@@ -646,6 +646,18 @@ When comparing the algorithm to a generic small object detection such as that of
 
 A common aspect of the evaluation papers is the availability of large annotated datasets and default evaluation methods. In the review of these papers, the evaluation vary a lot making comparisons between them hard enough. We used a default PASCAL VOC 2012 evaluation criters. The size of our dataset is small due to the time constraints that limited data gathering and annotation. As can be seen from our tests whenever more raw data was included in the dataset our Average Precision got better. Data Augmentation is not a substitute for raw data as the iterations and permutations found in real-world imagery cannot be replicated using mathematical transformation. \newline
 
+\section{Future Works}
+
+\begin{enumerate}
+\item More Data - Increase terrains and sensors
+\item Embedded CNN - GAP for proposals (image shape and size) + detector
+\item Use of Shallower layers in the GAP VGG architecture
+\item Custom-made CNN with learning from scratch - 
+\item Custom made with one size input layer based on image size
+\item Automatic Object size Detection
+\item Automatic dataset generation using Human Confirmation
+\end{enumerate}
+
 \appendix
 
 \subsection{Mobilenetv3 Training and Testing on Dataset v3}

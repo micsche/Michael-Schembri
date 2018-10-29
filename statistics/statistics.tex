@@ -17,6 +17,7 @@
 
 
 \begin{document}
+
 \onecolumn
 
 
@@ -433,16 +434,112 @@ The geosciences dataset has a number of terrains not present in the consumer dro
 
 \end{enumerate}
 
-\subsubsection{Comparison to other Small Object R-CNN}
 
 
 \subsection{Test 2: Class Activation Mapping}
 
-A human annotator will deduce the size of the objects once he starts reviewing the images from the aerial shots. The RCNN as shown is shift invariant to the cater very small objects as shown in figure \ref{fig:test1plausible}c and figure \ref{figcorrectable2}c. However, through Class Activation Mapping  one can determine the object size from CNN inference. A preliminary test on CAM methods has performed to compare it with the sliding window technique. The CAM 
+A human annotator will deduce the size of the objects once he starts reviewing the images from the aerial shots. The RCNN as shown is shift invariant to the cater very small objects as shown in figure \ref{fig:test1plausible}c and figure \ref{figcorrectable2}c. However, through Class Activation Mapping  one can determine the object size from CNN inference. A preliminary test on CAM methods was performed to compare it with the sliding window technique. The CAM output will be later on used to try to increase the precision values of the aerial-litter CNN. The CAM method allows the algorithm to perform a weak object localisation based on the activation output. This allows use to reduce the Sliding Window predicted box down to smaller and more accurate proposals.
 
-\subsection{Test 3: Pre-Filter}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/cam-output.png}
+\caption{Prediction output comparison (a)  VGG16 RCNN using sliding window (b)VGG16 using CAM prediction boxes }
+\label{fig:camoutput}
+\end{figure}
 
-\subsection{Test 4: Dataset Engineering}
+Note that the red bounding boxes indicate the ground-truth, whereas the green bounding boxes are the bounding boxes predicted by the algorithms. Note in figure \ref{fig:camoutput} that the CAM approach produces prediction boxes more accurate that the human annotation.
+This will allow us to increase the IoU threshold from a small image setting of 0.1 to a normal setting of 0.5, without and degradation in performance. The CAM approach was introduced to decrease the operational times for inferencing. The CAM stride was double that of the sliding window, downscaling the image by a factor of two. In spite of the downscaling, the proposals obtain still where more accuracte and close to the ground-truth than the sliding window technique.\newline
+
+The CAM output is followed by the VGG16 inferencing engine. This was done to validate the weaker classifier the VGG16-CAM. The two filters reduce the recall rate, as both drop their False Negatives. Table \ref{tablecam} shows an increase in precision from 0.0584 to 0.254, however a reduction in recall rate.\newline
+
+\begin{table}[ht]
+\caption{VGG16-CAM results}
+\label{tablecam}
+\centering
+\begin{tabular}{llll} 
+\hline
+\textbf{Dataset} & \textbf{Average Precision} & \textbf{Precision} & \textbf{Recall}  \\ 
+\hline
+test             & 0.18                       & 0.254              & 0.647            \\
+\end{tabular}
+\end{table}
+
+
+
+A number of tests will be performed on the sliding window, in order to increase the precision. The CAM method will be used in later algorithms to create an more precise locator.
+
+\subsection{Test 3: Dataset Engineering}
+
+Inspecting the bounding box predictions of the sliding window there are a number of terrains that are being erronuously tagged as plastic as previously described. \newline
+
+As Chawla et al \cite{Chawla2002} the sensitivity of an algorithm to the detected object can be tuned by altering the amount of class examples during the training of a machine algorithm, in our case the VGG16 inferencing engine. We will treat the number of examples in the dataset as being a hyperparameter that we can tune for optimum algorithm performance. The softmax classifier is being trained to discriminate litter beverage bottles versus the background terrain. The VGG16 is trained on images containing the object against images containing no objects. The hindsight beneath dataset engineering is to introduce more terrain examples of what the algorithm is continuously tagging as plastic.\newline
+
+The amount of plastic examples that are available to the dataset is fixed (unless we carry out more surveys). Therefore, as more terrain examples are included in the dataset, the ratio for the number of examples plastic vs non-plastic will verge to the non-plastic (or terrain). We will expect that as less terrain gets erronuously classified as plastic, the number of true positives will decrease accordingly. So by dataset engineering we will be expecting smaller recall rates however at a greater precision value.\newline
+
+The terrains being identified are shown in table \ref{table:addons}
+
+\begin{table}[ht]
+\centering
+\caption{Additional Terrains Extracted from Consumer Drone Surveys}
+\label{table:addons}
+\begin{tabular}{lll} 
+\hline
+\textbf{Terrain} & \textbf{No of Samples} & \textbf{Comments}  \\ 
+\hline
+Sea              & 5902                   & Filter             \\
+Sky              & 1214                   & Filter             \\
+Stone            & 1255                   & Dataset            \\
+Vegetation       & 1020                   & Dataset            \\
+Vehicle          & 65                     & Filter            
+\end{tabular}
+\end{table}
+
+Each terrain will be included in the original dataset or used in the pre-filter. The original dataset is shown in table \ref{table:original}. To note that currently the training dataset shows a slight imbalance to the plastic dataset. This will produce a classifier which is more likely to tag an image as a plastic object i.e. a classifier having a high-rate of False Posities. As more terrain is introduced this is imbalance is reduced, and in later tests shifted towards a high terrain content.
+ 
+\begin{table}[ht]
+\centering
+\caption{Dataset v1 number of samples per set}
+\label{table:original}
+\begin{tabular}{lll} 
+\hline
+        & \textbf{Training} & \textbf{Validation}  \\ 
+\hline
+Plastic & 5174              & 208                  \\
+Terrain & 2672              & 1172                
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Test 4.1: Pre-Filter} Initially sky,sea and vehicles where to be included in the dataset as described above, for hard-classification. However, to note that these terrains naturally occlude any presence of plastic. The project assignment was to locate litter found on land. Therefore it was decided that terrains to be removed completely from the search. This resulted in a number of benefits namely:
+\begin{enumerate}
+\item Performance: The filtering can be performed once to produce new images with sea and vehicles occluded. All other tests would be performed on the new filtered images. By detecting the masking out of an image, later classifiers can be made to ignore the patch and reduce the penalty of one classification per filtered tile.
+\item Accuracy: A binary classifier would be able to obtain better discriminating image features to filtering sky/sea/vehicle versus all other terrains, rather than a classifier trying to filter plastic versus terrain (where terrian contains road, garigue, coastline, trees, shrubs, stone, construction, fields, etc....). 
+\end{enumerate}
+
+The filter was performed using the same VGG16 convolutional block with two fully connected layer and a softmax classifier. A new image would be created using the older image with tiles blacked out, wherever a positive detection of sea terrain or vehicles would result. Future inferencing algorithms would detect beforehand a black tiles, and would skip that tile prediction.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/filter-geo.png}
+\caption{Output of PreFilter on scenes from dataset of GeoScience Survey}
+\label{fig:prefiltergeo}
+\end{figure}
+
+The output of the prefilter on the GeoScience survey images show that the sea surface has been removed, though not completely. In figure \ref{fig:prefiltergeo}a the low level sea one can still see the sea bed, and therefore the CNN algorithm determined that this was not the sea surface. To note that the images used for pre-filter were also obtained using one survey of the Consumer drone. Unfortunately, this survey did not contain low level seas, therefore there were no examples such as this sea-type. Figure \ref{fig:prefiltergeo}c shows that the filter has also misclassified some terrains as being sea. Following this misclassification of terrain the prefilter could possibly remove the chance of detecting plastic litter. A test confirmed that no tile that was filtered out contained a ground-truth bounding-box. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/filter-test.png}
+\caption{Output of PreFilter on scenes from dataset of Consumer DroneSurvey}
+\label{fig:prefiltertest}
+\end{figure}
+
+Figure \ref{fig:prefiltertest} show the correct removal of sky and vehicles from the Consumer drone surveys. Sky images can be erronuously inserted within surveys. This is possible because on initiating the survey (or drone flight) or during camera movement, some sky images might be erronuously inserted in the data. Figure \ref{fig:prefiltertest}a shows two vehicles removed from the scene. 
+
+
+
+
+\subsubsection{Test 4.2: Dataset Engineering}
 
 \subsection{Test 5: Field of View}
 

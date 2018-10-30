@@ -599,17 +599,17 @@ Additionally the plastic dataset was augmented by shifting the bounding box onto
 Tests where performed to see whether any improvements can be made by increasing the parameter range of the available augmentation techniques. The end evaluation is always the average precision, precision and recall values obtained by the RCNN. 
 
 \begin{enumerate}
-\item Height and Width Shift: The nine sample shift done within the dataset still has definite positions of plastic locations. We do not have this assurance that plastic will be available solely in these nine positions. Therefore to perform more fine tune shifts, we use the horizontal and vertical shifts available within the ImageGenerator.\newline
-
-\item Brightness Range:
+\item Height and Width Shift: The nine sample shift done within the dataset still has definite positions of plastic locations. We do not have this assurance that plastic will be available solely in these nine positions. Therefore to perform more fine tune shifts, we use the horizontal and vertical shifts available within the ImageGenerator. The height shift and width shift parameters are set to 0.25 i.e. 56 pixels. \newline
 
 \item Shear Range: The shear angle in degrees performs vertical shifts, useful when seeing an object from a different vertical angle. Shearing does reduce image quality and excessive ranges might reduce the shape data extensively.
 
-\item Rotation Range: Initially we opted only to use flipping and mirroring for data augmentation. These data augmentation techniques have the advantage of maintaining image quality and do not introduce terrain alterations (by filling in empty spaces left behind from non-90\degree rotations). A possibility that the small number of examples available in the dataset might be reducing the detection of images resulting in False Negative. To this end the rotation range will be tested for 10\degree, 22\degree and 45\degree. Since horizontal and vertical flipping will still be performed, these degree ranges will be sufficient to cover full rotation of the image samples. The Keras implementation of the ImageGenerator the parameter is the range of random rotations performed on the images.\newline
+\item Rotation Range: Initially we opted only to use flipping and mirroring for data augmentation. These data augmentation techniques have the advantage of maintaining image quality and do not introduce terrain alterations (by filling in empty spaces left behind from non-90\degree rotations). A possibility that the small number of examples available in the dataset might be reducing the detection of images resulting in False Negative. To this end the rotation range will be tested for 22\degree and 45\degree. Since horizontal and vertical flipping will still be performed, these degree ranges will be sufficient to cover full rotation of the image samples. The Keras implementation of the ImageGenerator the parameter is the range of random rotations performed on the images.\newline
 \end{enumerate}
 
 
 \subsection{Test 7: Normalisation}
+
+In machine learning it is common practive to normalise the data before training the machine algorithm. In image processing this is performed per channel of RGB input. The ImageGenerator implementation in Keras provides two normalisation methods featurewise and samplewise centering. In samplewise centering the normalisation takes the mean of the sample per channel and subtracts it from each image used during training. In featurewise centering the mean of the whole dataset is used to make the normalisation. Like Z-scale normalisation, these techniques also divide the result by the standard deviation of the sample. These parameters are booleans sent to the ImageGenerator function. To note that featurewise normalisation was reported to have unsolved issue within its implementation, so the results might be inconclusive.\newline
 
 
 \subsection{Test 8: Reduce Litter Sensitivity}

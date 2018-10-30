@@ -27,6 +27,11 @@ G.~Thung, ``{Dataset of images of trash},'' 2017. [Online]. Available:
   \url{https://github.com/garythung/trashnet}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Chawla2002}
+N.~Chawla, K.~W. Bowyer, L.~O. Hall, and W.~P. Kegelmeyer, ``{{\{}SMOTE{\}}:
+  {\{}S{\}}ynthetic minority over-sampling technique},'' \emph{Journal of
+  Artificial Intelligence Research}, vol.~16, pp. 321--357, 2002.
+
 \bibitem{Krishna}
 \BIBentryALTinterwordspacing
 H.~Krishna and C.~V. Jawahar, ``{Improving Small Object Detection}.'' [Online].

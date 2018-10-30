@@ -17,6 +17,7 @@
 
 
 \begin{document}
+
 \onecolumn
 
 
@@ -433,24 +434,195 @@ The geosciences dataset has a number of terrains not present in the consumer dro
 
 \end{enumerate}
 
-\subsubsection{Comparison to other Small Object R-CNN}
 
 
 \subsection{Test 2: Class Activation Mapping}
 
-A human annotator will deduce the size of the objects once he starts reviewing the images from the aerial shots. The RCNN as shown is shift invariant to the cater very small objects as shown in figure \ref{fig:test1plausible}c and figure \ref{figcorrectable2}c. However, through Class Activation Mapping  one can determine the object size from CNN inference. A preliminary test on CAM methods has performed to compare it with the sliding window technique. The CAM 
+A human annotator will deduce the size of the objects once he starts reviewing the images from the aerial shots. The RCNN as shown is shift invariant to the cater very small objects as shown in figure \ref{fig:test1plausible}c and figure \ref{figcorrectable2}c. However, through Class Activation Mapping  one can determine the object size from CNN inference. A preliminary test on CAM methods was performed to compare it with the sliding window technique. The CAM output will be later on used to try to increase the precision values of the aerial-litter CNN. The CAM method allows the algorithm to perform a weak object localisation based on the activation output. This allows use to reduce the Sliding Window predicted box down to smaller and more accurate proposals.
 
-\subsection{Test 3: Pre-Filter}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{images/cam-output.png}
+\caption{Prediction output comparison (a)  VGG16 RCNN using sliding window (b)VGG16 using CAM prediction boxes }
+\label{fig:camoutput}
+\end{figure}
 
-\subsection{Test 4: Dataset Engineering}
+Note that the red bounding boxes indicate the ground-truth, whereas the green bounding boxes are the bounding boxes predicted by the algorithms. Note in figure \ref{fig:camoutput} that the CAM approach produces prediction boxes more accurate that the human annotation.
+This will allow us to increase the IoU threshold from a small image setting of 0.1 to a normal setting of 0.5, without and degradation in performance. The CAM approach was introduced to decrease the operational times for inferencing. The CAM stride was double that of the sliding window, downscaling the image by a factor of two. In spite of the downscaling, the proposals obtain still where more accuracte and close to the ground-truth than the sliding window technique.\newline
+
+The CAM output is followed by the VGG16 inferencing engine. This was done to validate the weaker classifier the VGG16-CAM. The two filters reduce the recall rate, as both drop their False Negatives. Table \ref{tablecam} shows an increase in precision from 0.0584 to 0.254, however a reduction in recall rate.\newline
+
+\begin{table}[ht]
+\caption{VGG16-CAM results}
+\label{tablecam}
+\centering
+\begin{tabular}{llll} 
+\hline
+\textbf{Dataset} & \textbf{Average Precision} & \textbf{Precision} & \textbf{Recall}  \\ 
+\hline
+test             & 0.18                       & 0.254              & 0.647            \\
+\end{tabular}
+\end{table}
+
+
+
+A number of tests will be performed on the sliding window, in order to increase the precision. The CAM method will be used in later algorithms to create an more precise locator.
+
+\subsection{Test 3: Dataset Engineering}
+
+Inspecting the bounding box predictions of the sliding window there are a number of terrains that are being erronuously tagged as plastic as previously described. \newline
+
+As Chawla et al \cite{Chawla2002} the sensitivity of an algorithm to the detected object can be tuned by altering the amount of class examples during the training of a machine algorithm, in our case the VGG16 inferencing engine. We will treat the number of examples in the dataset as being a hyperparameter that we can tune for optimum algorithm performance. The softmax classifier is being trained to discriminate litter beverage bottles versus the background terrain. The VGG16 is trained on images containing the object against images containing no objects. The hindsight beneath dataset engineering is to introduce more terrain examples of what the algorithm is continuously tagging as plastic.\newline
+
+The amount of plastic examples that are available to the dataset is fixed (unless we carry out more surveys). Therefore, as more terrain examples are included in the dataset, the ratio for the number of examples plastic vs non-plastic will verge to the non-plastic (or terrain). We will expect that as less terrain gets erronuously classified as plastic, the number of true positives will decrease accordingly. So by dataset engineering we will be expecting smaller recall rates however at a greater precision value.\newline
+
+The terrains being identified are shown in table \ref{table:addons}
+
+\begin{table}[ht]
+\centering
+\caption{Additional Terrains Extracted from Consumer Drone Surveys}
+\label{table:addons}
+\begin{tabular}{lll} 
+\hline
+\textbf{Terrain} & \textbf{No of Samples} & \textbf{Comments}  \\ 
+\hline
+Sea              & 5902                   & Filter             \\
+Sky              & 1214                   & Filter             \\
+Vehicle          & 65                     & Filter            \\
+Stone            & 1255                   & Dataset            \\
+Vegetation       & 1020                   & Dataset           
+\end{tabular}
+\end{table}
+
+Each terrain will be included in the original dataset or used in the pre-filter. The original dataset is shown in table \ref{table:original}. To note that currently the training dataset shows a slight imbalance to the plastic dataset. This will produce a classifier which is more likely to tag an image as a plastic object i.e. a classifier having a high-rate of False Posities. As more terrain is introduced this is imbalance is reduced, and in later tests shifted towards a high terrain content.
+ 
+\begin{table}[ht]
+\centering
+\caption{Dataset v1 number of samples per set}
+\label{table:original}
+\begin{tabular}{lll} 
+\hline
+        & \textbf{Training} & \textbf{Validation}  \\ 
+\hline
+Plastic & 5174              & 208                  \\
+Terrain & 2672              & 1172                
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Test 4.1: Pre-Filter} Initially sky,sea and vehicles where to be included in the dataset as described above, for hard-classification. However, to note that these terrains naturally occlude any presence of plastic. The project assignment was to locate litter found on land. Therefore it was decided that terrains to be removed completely from the search. This resulted in a number of benefits namely:
+\begin{enumerate}
+\item Performance: The filtering can be performed once to produce new images with sea and vehicles occluded. All other tests would be performed on the new filtered images. By detecting the masking out of an image, later classifiers can be made to ignore the patch and reduce the penalty of one classification per filtered tile.
+\item Accuracy: A binary classifier would be able to obtain better discriminating image features to filtering sky/sea/vehicle versus all other terrains, rather than a classifier trying to filter plastic versus terrain (where terrian contains road, garigue, coastline, trees, shrubs, stone, construction, fields, etc....). 
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{images/todo.jpg}
+\caption{Sea and Vehicle being mistaken as Beverage Bottles}
+\label{fig:mistakes}
+\end{figure}
+
+The filter was performed using the same VGG16 convolutional block with two fully connected layer and a softmax classifier. A new image would be created using the older image with tiles blacked out, wherever a positive detection of sea terrain or vehicles would result. Future inferencing algorithms would detect beforehand a black tiles, and would skip that tile prediction.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/filter-geo.png}
+\caption{Output of PreFilter on scenes from dataset of GeoScience Survey}
+\label{fig:prefiltergeo}
+\end{figure}
+
+The output of the prefilter on the GeoScience survey images shows that the sea surface has been removed, though not completely. In figure \ref{fig:prefiltergeo}a the low level sea one can still see the sea bed, and therefore the CNN algorithm determined that this was not the sea surface. To note that the images used for pre-filter were also obtained using one survey of the Consumer drone. Unfortunately, this survey did not contain low level seas, therefore there were no examples such as this sea-type. Figure \ref{fig:prefiltergeo}c shows that the filter has also misclassified some terrains as being sea. Following this misclassification of terrain the prefilter could possibly remove the chance of detecting plastic litter. A test confirmed that no tile that was filtered out contained a ground-truth bounding-box. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{images/filter-test.png}
+\caption{Output of PreFilter on scenes from dataset of Consumer DroneSurvey}
+\label{fig:prefiltertest}
+\end{figure}
+
+Figure \ref{fig:prefiltertest} shows the correct removal of sky and vehicles from the Consumer drone surveys. Sky images can be erronuously inserted within surveys. This is possible because on initiating the survey (or drone flight) or during camera movement, some sky images might be erronuously inserted in the data. Figure \ref{fig:prefiltertest}a shows two vehicles removed from the scene. \newline
+
+
+\subsubsection{Test 4.2: Dataset Engineering}
+
+The pre-filter is useful only in images containing terrains that we do not expect or not require to detect litter. Finding beverage bottles in other locations is a possibility, therefore filtering out parts of images is unsuitable. The idea of dataset engineering is to ensure that the hard-classification of the CNN algorithm is more susceptable to features found in beverage bottles rather than features that could be common to terrain and bottles. This fine-tuning will be done by increasing the number of samples that the CNN is tagging as False Positives. The CNN from the first set is identifying long shadows from stones, regular features from walls and stone slabs, and branches from trees. Regular features like pipework is also being mistaken as 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{images/todo.jpg}
+\caption{(pipe/stone/walls/trees) Terrain being mistaken as Beverage Bottles}
+\label{fig:mistakes}
+\end{figure}
+
+The amount of samples inserted into the dataset \textit{terrain} is given by table \ref{table:addons}. 
+
+\begin{enumerate}
+\item{stone}
+\item{vegetation}
+\item{all}
+\end{enumerate}
+
+Following the results from the dataset engineering, the following tests will be performed with the dataset using all extra terrains included. The aim is to always look for the best method which increases the precision value whilst maintaining recall value.
 
 \subsection{Test 5: Field of View}
 
-\subsection{Test 6: Further Data Augmentation}
+The training done on the land surveys obtained from the consumer drone has obtained results that have not been replicated on the GeoScience dataset survey. From the statistics we have seen that the objects found in the latter surveys are half the zoom-scale found in the consumer drone bounding boxes. This difference might be the reason behind the difference in results. To check whether the algorithm is not shift invariant enough for the smaller-object dataset, we perform two modifications to the CNN algorithm to improve its shift invariancy.
 
-\subsection{Test 7: Reduce Litter Sensitivity}
+\begin{enumerate}
+\item Upscaling the images found in the geoscience dataset: Since the GeoScience bounding box mean is half that of the Consumer Drone bounding box mean, the new algorithm rescales the tile images with a zoom factor of 2. The sliding window algorithm has been modified so that each tile measures $112 \times 112$ and is resized using OpenCV using a bilinear interpolation. The pixel height to width ratio is maintained. The bilinear option was chosen as this was the fastest rescaling option which maintained smoother edges, i.e. it reduced the presence of high frequency features obtained by jagged edges. \newline
 
-\subsection{Best R-CNN - AP vs size}
+\item Increasing the training zoom parameters in the Data Augmentation techniques. Another option available is to increase the shift invariancy of the model directly through data augmentation. The \textit{ImageGenerator} by \textit{Keras} provides automatic scaling of the samples given to the algorithm. In the first training of the sliding window, by setting the ImageGenerator zoom\_range to 0.2 i.e. images could be scaled from 120\% of the image size down to 80\% of the image size. Knowing the difference of bounding box images size, the \textit{zoom\_range} factor was increased to 0.5 i.e. images to be scaled from 150\% down to 50\% of the original image size. It is expected that this type of shift-invariance would be less effective than the upscaling of the images because only part of the sample would be scaled to the desired zoom factor. \newline
+\end{enumerate}
+
+\subsection{Test 6: Further Data Augmentation Tuning}
+
+The initial dataset data augmenation, some parameters were set to get a minimal amount of data-augmentation. The parameters are shown in table \ref{table:dataaugorig}
+
+\begin{table}[ht]
+\centering
+\caption{Default Data Augmentation Parameters used}
+\label{table:dataaugorig}
+\begin{tabular}{ll} 
+\hline
+\textbf{Augmentation Technique}        & \textbf{Parameter setting} \\ 
+\hline
+Shear Range & 0.2 \\
+Zoom Range & 0.2\\
+Horizontal Flip & True \\
+Vertical Flip & True \\
+\end{tabular}
+\end{table}
+
+Additionally the plastic dataset was augmented by shifting the bounding box onto nine shift positions. Otherwise the neural network would have expected plastic to be located only in the middle \textbf{ninth} box. The advantage of performing shifts outside the data augmentation provided by the ImageGenerator, is that more real-image terrain is included in the end image. Data augmentation would require to fillup the empty space resulting from the shift by using the same data available within the image. As will be shown later on, real-world data is more useful for the CNN training than synthetic data.\newline
+
+Tests where performed to see whether any improvements can be made by increasing the parameter range of the available augmentation techniques. The end evaluation is always the average precision, precision and recall values obtained by the RCNN. 
+
+\begin{enumerate}
+\item Height and Width Shift: The nine sample shift done within the dataset still has definite positions of plastic locations. We do not have this assurance that plastic will be available solely in these nine positions. Therefore to perform more fine tune shifts, we use the horizontal and vertical shifts available within the ImageGenerator.\newline
+
+\item Brightness Range:
+
+\item Shear Range: The shear angle in degrees performs vertical shifts, useful when seeing an object from a different vertical angle. Shearing does reduce image quality and excessive ranges might reduce the shape data extensively.
+
+\item Rotation Range: Initially we opted only to use flipping and mirroring for data augmentation. These data augmentation techniques have the advantage of maintaining image quality and do not introduce terrain alterations (by filling in empty spaces left behind from non-90\degree rotations). A possibility that the small number of examples available in the dataset might be reducing the detection of images resulting in False Negative. To this end the rotation range will be tested for 10\degree, 22\degree and 45\degree. Since horizontal and vertical flipping will still be performed, these degree ranges will be sufficient to cover full rotation of the image samples. The Keras implementation of the ImageGenerator the parameter is the range of random rotations performed on the images.\newline
+\end{enumerate}
+
+
+\subsection{Test 7: Normalisation}
+
+
+\subsection{Test 8: Reduce Litter Sensitivity}
+
+Up until these tests the only two processes that have been successful in improving the Average Precision results were the pre-filtering and the increase in data available inside the terrain class. To test the criteria of whether it was correct to choose only 10 samples per scene, the sliding window CNN will be trained on increasing number of terrain samples, added to the existing dataset. Random tiles will be chosen from each each scene. The tile will be tested not to coincide with existing ground-truth bounding boxes and between proposed terrain tiles themselves. The tiles will be vetted again to remove any possibility of plastic litter (that would have been possibly missed or litter not falling under beverage bottle class). The CNN will be trained using the same 
+plastic samples.
+
+To note: the CNN will be trained and early stopping used based on validation accuracy. As more terrain samples are included in the dataset, the plastic class will move from a majority class to a minority class until with 100 terrain samples, the plastic becomes a very small percentage of the whole training. Also the validation set, ever greater emphasis will be made on correctly detecting terrain rather than litter. The end evaluation will be done by the overall R-CNN average precision, precision and recall values. 
+
+\subsection{Best R-CNN - GAP size}
+
+\subsection{Using GeoScience as the training set}
+
 
 \subsection{Comparison with Peer Small Object Detection}
 

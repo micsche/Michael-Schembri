@@ -1,0 +1,605 @@
+\documentclass{IEEEtran}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage[pdftex]{graphicx}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+\renewcommand{\cite}[2]{}
+\title{}
+\onecolumn
+\begin{document}
+\section{Resnet-50}
+
+\begin{enumerate}
+\item Validation size 50 
+\item Lrate 1e-5
+\item EarlyStopping 10 epochs without validation accuracy increasing
+\end{enumerate}
+
+\bigskip
+
+\textbf{Flatten - Softmax Classifier}
+Validation Accuracy obtained: 0.93913
+
+\includegraphics[width=2.7374in,height=1.9201in]{resnet-img/resnet-img001.png} 
+\includegraphics[width=2.6772in,height=1.9028in]{resnet-img/resnet-img002.png} 
+
+\begin{table}[ht]
+\centering
+\caption{Resnet -Flatten - Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  & 0.96  & 0.97  & 0.96  & 1172 \\\hline
+Litter  & 0.82  & 0.76  & 0.79  & 208 \\\hline
+avg / total  & 0.94  & 0.94 & 0.94 & 1380\\\hline
+\end{tabular}
+\end{table}
+
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Flatten -- FCN 1024 width -- Softmax Classifier} \ 
+Validation Accuracy obtained 0.94928
+
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img003.png} 
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img004.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Resnet -Flatten -- FCN 1024 width - Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.95  &
+0.98  &
+0.97  &
+1172 \\\hline
+Litter  &
+0.88  &
+0.74  &
+0.80  &
+208 \\\hline
+avg / total  &
+0.94  &
+0.94 &
+0.94 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+
+\bigskip
+
+\textbf{Flatten -- FCN 2048 width -- Softmax Classifier }\ 
+Validation Accuracy obtained 0.94565
+
+ \includegraphics[width=3in,height=2in]{resnet-img/resnet-img005.png} 
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img006.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Resnet - Flatten - FCN 2048 width -- Softmax Classifier}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.95  &
+0.99  &
+0.97  &
+1172 \\\hline
+Litter  &
+0.90  &
+0.72  &
+0.80  &
+208 \\\hline
+avg / total  &
+0.94  &
+0.95  &
+0.94  &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+
+\bigskip
+
+
+\bigskip
+
+\textbf{Flatten -- FCN 4096 width -- Softmax Classifier} \ 
+Validation Accuracy obtained 0.94565
+
+ \includegraphics[width=3in,height=2in]{resnet-img/resnet-img007.png} 
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img008.png} 
+
+\begin{table}[ht]
+\centering
+\caption{Resnet - Flatten -- FCN 4096 width -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.96  &
+0.98  &
+0.97  &
+1172 \\\hline
+Litter  &
+0.87  &
+0.74  &
+0.80  &
+208 \\\hline
+avg / total  &
+0.94  &
+0.94  &
+0.94  &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Flatten -- FCN 1024 -- FCN 1024 width -- Softmax Classifier} \ 
+Validation Accuracy obtained 0.93116
+
+ \includegraphics[width=3in,height=2in]{resnet-img/resnet-img009.png} 
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img010.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Resnet - Flatten -- FCN 1024 -- FCN 1024 width -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.93  &
+0.99  &
+0.96  &
+1172 \\\hline
+Litter  &
+0.90  &
+0.59  &
+0.71  &
+208 \\\hline
+avg / total  &
+0.93  &
+0.93  &
+0.92  &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+
+\bigskip
+
+\textbf{Resnet - Flatten -- FCN 1024 width -- Softmax Classifier \ Resnet Block 5 trainable}
+Validation Accuracy obtained 0.94855
+
+
+\bigskip
+
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img011.png} 
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img012.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Resnet - Flatten -- FCN 1024 width -- Softmax Classifier \ Resnet Block 5 trainable Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.91  &
+0.99  &
+0.95  &
+1172 \\\hline
+Litter  &
+0.86  &
+0.48  &
+0.61  &
+208 \\\hline
+avg / total  &
+0.91  &
+0.91  &
+0.90  &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+
+\bigskip
+
+\textbf{Flatten -- FCN 1024 width -- Softmax Classifier \ Resnet Block 4\&5 trainable}
+Validation Accuracy obtained 0.94565
+
+ \includegraphics[width=3in,height=2in]{resnet-img/resnet-img013.png} 
+\includegraphics[width=3in,height=2in]{resnet-img/resnet-img014.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Resnet - Flatten -- FCN 1024 width -- Softmax Classifier \ Resnet Block 4\&5 trainable Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.92  &
+0.99  &
+0.96  &
+1172 \\\hline
+Litter  &
+0.94  &
+0.53  &
+0.68  &
+208 \\\hline
+avg / total  &
+0.93  &
+0.92  &
+0.91  &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+
+
+\section{Mobilenet V3}
+
+
+\bigskip
+
+\begin{enumerate}
+\item Batch size 150
+\item Validation size 50
+\item Lrate 1e-5
+\end{enumerate}
+
+\bigskip
+
+EarlyStopping 10 epochs without validation accuracy increasing
+
+
+\bigskip
+
+\textbf{Mobilenet - Flatten -- Softmax Classifier : Non-converging}
+
+
+\bigskip
+
+
+\bigskip
+
+ \includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img001.png} 
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img002.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Flatten -- Softmax Classifier : Non-converging Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter &
+0.96 &
+0.84 &
+0.90 &
+1172 \\\hline
+Litter &
+0.47 &
+0.82 &
+0.60 &
+208 \\\hline
+avg / total &
+0.89 &
+0.84 &
+0.85 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Mobilenet Global Average Pooling 2d - Softmax Classifier}: Validation Accuracy obtained 0.8233
+
+ \includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img003.png} 
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img004.png} 
+
+
+\bigskip
+
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter &
+0.95 &
+0.85 &
+0.90 &
+1172 \\\hline
+Litter &
+0.48 &
+0.77 &
+0.59 &
+208 \\\hline
+avg / total &
+0.88 &
+0.84 &
+0.85 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Mobilenet - Global Average Pooling 2d -- FCN 1024 width -- Softmax Classifier}: Validation Accuracy obtained 0.84420
+
+ \includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img005.png} 
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img006.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d -- FCN 1024 width -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter &
+0.98 &
+0.83 &
+0.90 &
+1172 \\\hline
+Litter &
+0.49 &
+0.91 &
+0.64 &
+208 \\\hline
+avg / total &
+0.91 &
+0.84 &
+0.86 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Mobilenet - Global Average Pooling 2d - FCN 2048 width -- Softmax Classifier}: Validation Accuracy obtained \ 0.86739
+
+ \includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img007.png} 
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img008.png} 
+
+
+\bigskip
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d -- FCN 2048 width -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter  &
+0.98 &
+0.86 &
+0.92 &
+1172 \\\hline
+Litter &
+0.54 &
+0.90 &
+0.67  &
+208\\\hline
+avg / total &
+0.91 &
+0.87 &
+0.88 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Mobilenet - Global Average Pooling 2d -- FCN 4096 width -- Softmax Classifier}: Validation Accuracy obtained \ 0.86449
+
+
+\bigskip
+
+
+\bigskip
+
+ \includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img009.png} 
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img010.png} 
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d -- FCN 4096 width -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter &
+0.97 &
+0.86 &
+0.92 &
+1172 \\\hline
+Litter &
+0.53 &
+0.87 &
+0.66 &
+208 \\\hline
+avg / total &
+0.91 &
+0.86 &
+0.88 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+
+\bigskip
+
+\textbf{Mobilenet - Global Average Pooling 2d - FCN 2048 width - FCN 2048 width - Softmax Classifier}: Validation Accuracy obtained
+0.81884
+
+
+\bigskip
+
+
+\bigskip
+
+ \includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img011.png} 
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img012.png} 
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d -- FCN 2048 width -- FCN 2048 width -- Softmax Classifier Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+ & precision & recall  & f1-score  & support \\\hline
+No Litter &
+0.97 &
+0.81 &
+0.88 &
+1172 \\\hline
+Litter &
+0.45 &
+0.88 &
+0.59 &
+208 \\\hline
+avg / total &
+0.89 &
+0.82 &
+0.84 &
+1380\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Mobilenet - Global Average Pooling 2d - FCN 2048 width - Softmax Classifier conv block (13) trainable }: Validation Accuracy obtained 0.9514
+
+
+
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img013.png}
+\includegraphics[width=3in,height=2in]{mobilenet-img/mobilenet-img014.png}
+
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d - FCN 2048 width - Softmax Classifier conv block (13) trainable Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+No Litter &
+0.91 &
+0.99 &
+0.95 &
+1172\\\hline
+Litter
+ &
+0.94
+ &
+0.46
+ &
+0.62
+ &
+208
+\\\hline
+avg / total
+ &
+0.92
+ &
+0.91
+ &
+0.90
+ &
+1380
+\\\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\noindent\rule{8cm}{0.4pt}\end{center}
+
+\textbf{Mobilenet - Global Average Pooling 2d - FCN 2048 width - Softmax Classifier 2 conv block trainable} : Validation Accuracy obtained 0.9514
+
+\begin{table}[ht]
+\centering
+\caption{Mobilenet - Global Average Pooling 2d - FCN 2048 width - Softmax Classifier 2 conv block  trainable Results}
+\begin{tabular}{|l|l|l|l|l|} 
+\hline
+NoLitter
+ &
+0.93
+ &
+0.99
+ &
+0.96
+ &
+1172
+\\\hline
+Litter
+ &
+0.95
+ &
+0.57
+ &
+0.71
+ &
+208
+\\\hline
+avg / total
+ &
+0.93
+ &
+0.93
+ &
+0.92
+ &
+1380
+\\\hline
+\end{tabular}
+\end{table}
+
+
+Accuracy improvement stops therefore we assume that layers are already trained.
+
+\end{document}
